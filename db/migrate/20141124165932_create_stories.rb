@@ -4,7 +4,7 @@ class CreateStories < ActiveRecord::Migration
     	t.string :title
     	t.text :content
 
-    	t.belongs_to :user 
+    	t.belongs_to :user
     	
       t.timestamps
     end
