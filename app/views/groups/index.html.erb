@@ -8,5 +8,7 @@ create a new group
 <%end%>
 
 <% @groups.each do |g|%>
-<p><%= g.name%></p>
+	<div class="group-index-card">
+		<%= link_to g.name, group_path(g)%>
+	</div>
 <%end%>

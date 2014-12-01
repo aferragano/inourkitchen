@@ -19,6 +19,7 @@ class GroupsController < ApplicationController
 	end
 
 	def show
+		@recipes = @group.recipes
 	end
 
 	def edit
