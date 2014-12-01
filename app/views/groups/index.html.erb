@@ -1,0 +1,12 @@
+
+<h1>GROUPS INDEX PAGE</h1>
+
+create a new group
+<%=form_for @group, :url => groups_path do |f|%>
+<%=f.text_field :name, placeholder: "new name" %>
+<%=f.submit%>
+<%end%>
+
+<% @groups.each do |g|%>
+<p><%= g.name%></p>
+<%end%>
