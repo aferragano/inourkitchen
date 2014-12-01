@@ -8,6 +8,17 @@
 </head>
 <body>
 
+	<nav>
+
+	<h3><%= link_to "in our kitchen", root_path %></h3>
+
+	<button>log in</button>
+	<button>sign up</button>
+
+	<button><%= link_to "add recipe", new_recipe_path %></button>
+	<button><%= link_to "groups", groups_path %></button>
+
+</nav>
 <%= yield %>
 
 </body>

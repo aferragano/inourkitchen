@@ -2,6 +2,24 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+
+  # resources :users
+  # resources :groups do 
+  #   resources :recipes, shallow: true
+  # end
+  # shallow do
+  #   resources :users
+  #   resources :groups do
+  #     resources :recipes do
+  #       resources :stories
+  #     end
+  #   end
+  # end
+  root 'recipes#index'
+  resources :users
+  resources :groups
+  resources :recipes
+  resources :stories
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

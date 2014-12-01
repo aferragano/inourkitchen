@@ -1,0 +1,12 @@
+<%= form_for @recipe do |f| %>
+<%= f.text_field :title, placeholder: "Recipe Name" %><br>
+<%= f.text_area :summary, placeholder: "please provide a brief summary of this recipe" %><br>
+<%= f.text_field :serve_size, placeholder:"serves how many" %><br>
+<%= f.text_field :time, placeholder:"time to make in minutes" %><br>
+<%= f.text_area :ingredients, placeholder:"list all ingredients" %><br>
+<%= f.text_area :directions, placeholder:"please provide step-by-step instructions" %><br>
+
+
+
+<br><%=f.submit %>
+<%end%>
