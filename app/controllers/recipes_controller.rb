@@ -20,6 +20,19 @@ class RecipesController < ApplicationController
 	def show
 	end
 
+	def update
+		
+		if @recipe.update(recipe_params)
+			redirect_to @recipe
+		else
+			render :edit
+		end
+	end
+
+	def destroy
+		@recipe.destroy
+	end
+
 	private
 
 	def recipe_params
