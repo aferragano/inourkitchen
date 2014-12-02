@@ -9,21 +9,20 @@
 <body>
 
 	<nav>
+		<ul>
 
-	<h3><%= link_to "in our kitchen", root_path %></h3>
+		<li><h3><%= link_to "in our kitchen", root_path %></h3></li>
 
-	<button id="login-btn">log in</button>
-	<button id="sign-up-btn">sign up</button>
+		<li><button><%= link_to "user", users_path %></button></li>
+		<li><button><%= link_to "add recipe", new_recipe_path %></button></li>
+		<li><button><%= link_to "groups", groups_path %></button></li>
 
-	<%=link_to "log out", '/logout', method: :delete %>
+		<li><button id="login-btn">log in</button></li>
+		<li><button id="sign-up-btn">sign up</button></li>
+		<li><button><%=link_to "log out", '/logout', method: :delete %></button>
 
-	<button><%= link_to "user", users_path %></button>
-
-	<button><%= link_to "add recipe", new_recipe_path %></button>
-	<button><%= link_to "groups", groups_path %></button>
-
-
-</nav>	
+		</ul>
+	</nav>	
 <div class="login-div">
 	<%= form_for :session, url: '/login' do |f| %>
 	<%= f.text_field :username, placeholder: "username" %>
