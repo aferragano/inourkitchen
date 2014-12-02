@@ -16,10 +16,18 @@ Rails.application.routes.draw do
   #   end
   # end
   root 'recipes#index'
-  resources :users
+  
   resources :groups
   resources :recipes
   resources :stories
+  
+  resources :users
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+
+  resources :sessions, only: [:new, :create, :destroy]
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

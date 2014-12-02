@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Inourkitchen</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,13 +12,37 @@
 
 	<h3><%= link_to "in our kitchen", root_path %></h3>
 
-	<button>log in</button>
-	<button>sign up</button>
+	<button id="login-btn">log in</button>
+	<button id="sign-up-btn">sign up</button>
+
+	<%=link_to "log out", '/logout', method: :delete %>
+
+	<button><%= link_to "user", users_path %></button>
 
 	<button><%= link_to "add recipe", new_recipe_path %></button>
 	<button><%= link_to "groups", groups_path %></button>
 
-</nav>
+
+</nav>	
+<div class="login-div">
+	<%= form_for :session, url: '/login' do |f| %>
+	<%= f.text_field :username, placeholder: "username" %>
+	<%= f.password_field :password, placeholder: "password" %>
+	<%= f.submit "login" %>
+	<% end %>
+</div>
+
+<div class="sign-up-div">
+<%=form_for :user, url: '/signup' do |f| %>
+<%=f.text_field :first_name, placeholder: "first name" %><br>
+<%=f.text_field :last_name, placeholder: "last name" %><br>
+<%=f.text_field :username, placeholder: "username" %><br>
+<%=f.text_field :email, placeholder: "email" %><br>
+<%=f.password_field :password, placeholder: "password" %><br>
+<%=f.submit %>
+<% end %>
+</div>
+
 <%= yield %>
 
 </body>
