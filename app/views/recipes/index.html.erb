@@ -3,19 +3,27 @@
 	<p>search by tags</p>
 
 	<div class="index-cards">
-	<h4>my recipes</h4>
+	<h3>my recipes</h3>
+	<button><%= link_to("add recipe", new_recipe_path) %></button>
 	</div>
 
 	<div class="index-cards">
-	<h4>top recipes</h4>
+	<h3>top recipes</h3>
+		<ul>
+			<% @recipes.each do |r| %>
+				<li><%=link_to r.title, recipe_path(r)%></li>
+			<% end %>
+	</ul>
 	</div>
 
 	<div class="index-cards">
-	<h4>my groups</h4> 
-	</div>
-
-	<!-- <button>add recipe</button> -->
-	<%= link_to("add recipe", new_recipe_path) %>
+	<h3>my groups</h3> 
+		<ul>
+		<% @groups.each do |group| %>
+		<li><%=link_to group.name, group_path(group)%></li>
+		<% end %>
+	</ul>
 	<button>make a group</button>
 	<button>join a group</button>
-	
+	</div>
+

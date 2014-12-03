@@ -5,25 +5,27 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 	<nav>
 		<ul>
-
+		<div class='plate' id='first'></div><div class='plate'></div>
 		<li><h1><%= link_to "in our kitchen", root_path %></h1></li>
+
 
 		<div class="options">
 		<li><button><%= link_to "add recipe", new_recipe_path %></button></li>
 		
 
-		<% if true %>
-		<li><button id="login-btn">log in</button></li>
-		<li><button id="sign-up-btn">sign up</button></li>
-		
-		<% else %>
+		<% if session[:id] %>
 		<li><button><%= link_to "groups", groups_path %></button></li>
 		<li><button><%=link_to "log out", '/logout', method: :delete %></button>
+		
+		<% else %>
+		<li><button id="login-btn">log in</button></li>
+		<li><button id="sign-up-btn">sign up</button></li>
 		
 
 		<% end %>
