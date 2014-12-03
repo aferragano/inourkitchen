@@ -1,0 +1,97 @@
+@import "bourbon";
+
+
+html {
+	font-family: $lucida-grande;
+	background-color:#F0EBD9;
+}
+
+ul, li {
+margin: 1px;
+}
+
+nav {
+	margin:0px;
+	color: #F0EBD9;
+	background-color: #FAA687;
+	margin-bottom: 10px;
+	padding-bottom: 0px;
+	width: 101%;
+	height: 50px;
+}
+a:visited {
+	color: #F0EBD9;
+}
+nav li, a {
+	display: inline-block;
+	text-decoration: none;
+	color: #F0EBD9;
+}
+
+a:hover {
+	color: #EDDB96;
+}
+button:hover {
+	background-color: #3F5765;
+}
+button, button a:visited {
+	font-size: 1em;
+	color: #F0EBD9;
+	background-color: #78A199;
+	border: none;
+	border-radius: 5px;
+}
+nav button{
+	margin-left:15px;
+}
+
+#new-recipe {
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	background-color: #78A199;
+}
+#new-recipe textarea{
+	width: 80%;
+	height: 65px;
+	border: none;
+}
+#new-recipe input {
+	border: none;
+	background-color:white;
+	font-size: 1em;	
+	margin-bottom: 5px;
+}
+#new-recipe .recipe-title {
+	font-size: 2em;
+}
+
+.group-index-card {
+	background-color: #78A199;
+	width: 180px;
+	display: inline-block;
+	padding: 5px;
+	border-radius: 10px;
+}
+.options {
+	float: right;
+	display: inline;
+	
+}
+.index-cards {
+	width:150px;
+	background-color: #78A199;
+	display: inline-block;
+	color: #F0EBD9;
+}
+.login-div, .sign-up-div {
+	background-color: #78A199;
+	width:170px;
+	padding:5px;
+	margin:5px;
+	float:center;
+	text-align: center;
+	margin-left:auto;
+	margin-right:auto;
+}
