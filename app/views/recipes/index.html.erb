@@ -4,7 +4,13 @@
 
 	<div class="index-cards">
 	<h3>my recipes</h3>
+	<ul>
+			<% @user_recipes.each do |r| %>
+				<li><%=link_to r.title, recipe_path(r)%></li>
+			<% end %>
+	</ul>
 	<button><%= link_to("add recipe", new_recipe_path) %></button>
+	
 	</div>
 
 	<div class="index-cards">
