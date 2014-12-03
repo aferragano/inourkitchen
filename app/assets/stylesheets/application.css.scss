@@ -21,6 +21,7 @@ nav {
 	padding: 0px;
 	width: 100%;
 	height: 60px;
+	opacity: .9;
 }
 a:visited {
 	color: #F0EBD9;
@@ -49,12 +50,16 @@ nav button{
 	padding-right:5px;
 }
 
-#new-recipe {
+#new-recipe, .display-recipe {
+	margin-top:10px;
 	padding: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
 	background-color: #78A199;
+	border-radius:5px;
+	opacity:.7;
+	color: #F0EBD9;
 }
 #new-recipe textarea{
 	width: 80%;
@@ -81,16 +86,19 @@ nav button{
 .options {
 	float: right;
 	display: inline;
-	
+	margin-top:20px;
+	margin-right:5px;
 }
 .index-cards, {
 	width:300px;
 	background-color: #3F5765;
 	display: inline-block;
+	vertical-align: text-top;
 	color: #FAA687;
 	padding:5px;
 	margin:5px;
 	border-radius:10px;
+	opacity: .8;
 }
 .index-cards li, .index-cards a {
 	color: #F0EBD9;
@@ -122,5 +130,4 @@ nav button{
 #first{
 	margin-left:-30px;
 	background-color: #3F5765;
-
 }

@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 	def index
 		@group = Group.new
-		@groups = Group.all
+		@groups = User.find_by_id(session[:user_id]).groups
 	end
 
 	def new

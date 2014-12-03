@@ -1,18 +1,6 @@
 
 
 	<p>search by tags</p>
-
-	<div class="index-cards">
-	<h3>my recipes</h3>
-	<ul>
-			<% @user_recipes.each do |r| %>
-				<li><%=link_to r.title, recipe_path(r)%></li>
-			<% end %>
-	</ul>
-	<button><%= link_to("add recipe", new_recipe_path) %></button>
-	
-	</div>
-
 	<div class="index-cards">
 	<h3>top recipes</h3>
 		<ul>
@@ -22,14 +10,29 @@
 	</ul>
 	</div>
 
-	<div class="index-cards">
-	<h3>my groups</h3> 
+
+	<% if session[:user_id] %>
+		<div class="index-cards">
+		<h3>my recipes</h3>
 		<ul>
-		<% @groups.each do |group| %>
-		<li><%=link_to group.name, group_path(group)%></li>
-		<% end %>
-	</ul>
-	<button>make a group</button>
-	<button>join a group</button>
-	</div>
+				<% @user_recipes.each do |r| %>
+					<li><%=link_to r.title, recipe_path(r)%></li>
+				<% end %>
+		</ul>
+		<button><%= link_to("add recipe", new_recipe_path) %></button>
+		
+		</div>
+
+
+		<div class="index-cards">
+		<h3>my groups</h3> 
+			<ul>
+			<% @groups.each do |group| %>
+			<li><%=link_to group.name, group_path(group)%></li>
+			<% end %>
+		</ul>
+		<button>make a group</button>
+		<button>join a group</button>
+		</div>
+	<%end%>
 
