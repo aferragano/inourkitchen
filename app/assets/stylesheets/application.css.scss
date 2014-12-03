@@ -3,41 +3,46 @@
 
 html {
 	font-family: $lucida-grande;
-	padding: 0px;
+	background-color:#F0EBD9;
 }
 
 ul, li {
 margin: 1px;
-
 }
 
 nav {
-	color: #FE8F8C;
-	background-color: #D7E6E7;
-	margin: -10px;
-	margin-bottom: 0px;
+	margin:0px;
+	color: #F0EBD9;
+	background-color: #FAA687;
+	margin-bottom: 10px;
 	padding-bottom: 0px;
+	width: 101%;
+	height: 50px;
 }
 a:visited {
-	color: #FE8F8C;
+	color: #F0EBD9;
 }
 nav li, a {
 	display: inline-block;
 	text-decoration: none;
-	color: white;
+	color: #F0EBD9;
 }
 
 a:hover {
-	color: #4E9FBA;
+	color: #EDDB96;
 }
 button:hover {
-	background-color: #4E9FBA;
+	background-color: #3F5765;
 }
 button, button a:visited {
-	color: white;
-	background-color: #FE8F8C;
+	font-size: 1em;
+	color: #F0EBD9;
+	background-color: #78A199;
 	border: none;
 	border-radius: 5px;
+}
+nav button{
+	margin-left:15px;
 }
 
 #new-recipe {
@@ -45,12 +50,11 @@ button, button a:visited {
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
-	background-color: #FE8F8C;
+	background-color: #78A199;
 }
 #new-recipe textarea{
 	width: 80%;
 	height: 65px;
-
 	border: none;
 }
 #new-recipe input {
@@ -64,9 +68,30 @@ button, button a:visited {
 }
 
 .group-index-card {
-	background-color: #D7E6E7;
+	background-color: #78A199;
 	width: 180px;
 	display: inline-block;
 	padding: 5px;
 	border-radius: 10px;
+}
+.options {
+	float: right;
+	display: inline;
+	
+}
+.index-cards {
+	width:150px;
+	background-color: #78A199;
+	display: inline-block;
+	color: #F0EBD9;
+}
+.login-div, .sign-up-div {
+	background-color: #78A199;
+	width:170px;
+	padding:5px;
+	margin:5px;
+	float:center;
+	text-align: center;
+	margin-left:auto;
+	margin-right:auto;
 }
