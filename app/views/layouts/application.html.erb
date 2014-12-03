@@ -4,6 +4,7 @@
   <title>Inourkitchen</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application'%>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,14 +18,14 @@
 		<li><button><%= link_to "add recipe", new_recipe_path %></button></li>
 		
 
-		<% if true %>
-		<li><button id="login-btn">log in</button></li>
-		<li><button id="sign-up-btn">sign up</button></li>
-		
-		<% else %>
+		<% if session[:user_id] %>
+
 		<li><button><%= link_to "groups", groups_path %></button></li>
 		<li><button><%=link_to "log out", '/logout', method: :delete %></button>
-		
+				
+		<% else %>
+		<li><button id="login-btn">log in</button></li>
+		<li><button id="sign-up-btn">sign up</button></li>
 
 		<% end %>
 	</div>
