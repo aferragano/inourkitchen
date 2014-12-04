@@ -1,25 +1,10 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-
-  # resources :users
-  # resources :groups do 
-  #   resources :recipes, shallow: true
-  # end
-  # shallow do
-  #   resources :users
-  #   resources :groups do
-  #     resources :recipes do
-  #       resources :stories
-  #     end
-  #   end
-  # end
   root 'recipes#index'
   
-  resources :groups do
-    resources :group_users, only: [:new, :index, :create, :destroy]
-  end
+  resources :groups
+  resources :group_users, only: [:new, :index, :create, :destroy]
   get '/add_user' => 'group_users#new'
   post '/add_user' => 'group_users#create'
 
