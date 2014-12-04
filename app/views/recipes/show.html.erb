@@ -9,16 +9,21 @@
 		<br><button><%= link_to "edit", edit_recipe_path(@recipe) %></button>
 </div>
 
-<div>
-	<h4>comments</h4>
+<h4>comments</h4>
+<div class="comment">
 	<% @r_comments.each do |comment| %>
-		<%=comment.content %>
-		<%=comment.user %>
+		content: <%= comment.content %>
+		<% if comment.user %>
+			by: <%= comment.user.first_name %><br>
+			<% end %>
 	<%end%>
 </div>
 
 <div>
-	<%=form_for @comment do |f| %>
-		<%=f.text_area :content %>
+	<%= form_for [@commentable, @comment] do |f| %>
+
+		<%= f.text_area :content %>
+
+		<%= f.submit %>
 		<% end %>
-</div>
+</div> 

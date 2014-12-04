@@ -26,11 +26,12 @@ class RecipesController < ApplicationController
 
 	def show
 		@r_comments = @recipe.comments
+		@commentable = @recipe 
 		@comment = Comment.new
+
 	end
 
 	def update
-		
 		if @recipe.update(recipe_params)
 			redirect_to @recipe
 		else
