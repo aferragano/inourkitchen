@@ -1,1 +1,8 @@
 edit.html.erb
+
+<div class="group-user-card" id="add-user">
+	<%=form_for [@group, @user], url: {controller: "groups", action: :create } do |f| %>
+		<%= f.text_field :email, placeholder: "email" %><br>
+		<%= f.submit %>
+	<% end %>
+</div>

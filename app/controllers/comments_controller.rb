@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 		@comment = @commentable.comments.new
 	end
 
-	def create
+	def create 
 		@comment = @commentable.comments.create(comment_params)
 		current_user.comments << @comment if current_user
 		if @comment.save
@@ -28,15 +28,8 @@ class CommentsController < ApplicationController
 
 	def load_commentable 
 		resource, id = request.path.split('/')[1, 2]
-		p resource
-		p " resource and id" * 10
-		p id
-		p request.path
-		p "REQUEST PATH"
-		p request.referrer
-		p "REQUEST referrer"
-		p @commentable = resource.singularize.classify.constantize.find(id)
-		p @commentable 
+		@commentable = resource.singularize.classify.constantize.find(id)
+		@commentable 
 	end
 
 

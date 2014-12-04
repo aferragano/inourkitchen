@@ -1,12 +1,12 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
+
 	def index
 		@group = Group.new
 		@groups = User.find_by_id(session[:user_id]).groups
 	end
 
 	def new
-		# @group = Group.new
 	end
 
 	def create
@@ -22,9 +22,11 @@ class GroupsController < ApplicationController
 	def show
 		@recipes = @group.recipes
 		@g_users = @group.users
+		@group_user = @group.users.new
 	end
 
 	def edit
+		@user = User.new
 	end
 
 	def update
@@ -41,6 +43,10 @@ class GroupsController < ApplicationController
 
 	def group_params
 		params.require(:group).permit(:name)
+	end
+
+	def new_user_params
+		params.require(@group_user).permit(:email)
 	end
 
 end

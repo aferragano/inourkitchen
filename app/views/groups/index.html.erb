@@ -1,17 +1,23 @@
  
 <h1>GROUPS INDEX PAGE</h1>
+ 
 
-create a new group
-<%=form_for @group, :url => groups_path do |f|%>
-<%=f.text_field :name, placeholder: "new name" %>
-<%=f.submit%>
-<%end%><br>
+<div class="group-index-card">
+	create a new group
+	<%=form_for @group, :url => groups_path do |f|%>
+		<%=f.text_field :name, placeholder: "new group name" %>
+		<%=f.submit%>
+	<%end%>
+</div>
 
 <% @groups.each do |g|%>
 	<div class="group-index-card">
-		<%= link_to g.name, group_path(g)%>
+		<h3><%= link_to g.name, group_path(g)%></h3>
 		<% g.recipes do |r| %>
 			<%=r.title%>
 		<% end %>
+		<% g.users.each do |user| %>
+			<h4><%=user.username %></h4>
+		<%end %>
 	</div>
 <%end%>
