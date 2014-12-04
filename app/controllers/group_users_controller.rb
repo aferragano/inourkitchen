@@ -9,7 +9,11 @@ class GroupUsersController < ApplicationController
 	end
 
 	def create
-		@user = User.find_by(group_user_params)
+		if User.find_by(group_user_params)
+			@user = User.find_by(group_user_params)
+		else
+			redirect_to request.referrer, notice: "user not found"
+		end
 		@group_id.users << @user
 		if @group_id.save 
 			redirect_to request.referrer, notice: "user added"
