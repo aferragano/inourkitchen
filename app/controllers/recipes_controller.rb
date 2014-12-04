@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
 	def new
 		@recipe = Recipe.new
 	end
-
+ 
 	def create
 		@recipe = Recipe.create(recipe_params)
 		@user = User.find_by_id(session[:user_id])

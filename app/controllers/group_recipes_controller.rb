@@ -5,7 +5,7 @@ before_filter :load_recipe
 	end
 
 	def new
-
+ 
 	end
 
 	def create
