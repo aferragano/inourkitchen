@@ -6,5 +6,26 @@
 	<h3>time: <%=@recipe.time%></h3>
 	<h3>directions</h3>
 	<p><%= @recipe.directions %>
-		<%= link_to "edit", edit_recipe_path(@recipe) %>
+		<br><button><%= link_to "edit", edit_recipe_path(@recipe) %></button>
 </div>
+
+
+
+
+
+<div class="comment">
+	<h4>comment</h4>
+	<%= form_for [@commentable, @comment] do |f| %>
+		<%= f.text_area :content %><br>
+		<%= f.submit %>
+		<% end %>
+</div> 
+	<% @r_comments.each do |comment| %>
+	<div class="comment">
+		<p><%= comment.content %></p>
+		<% if comment.user %>
+		<div class='user-comment-img'>user img</div>
+			<h5>by: <%= comment.user.first_name %></h5>
+			<% end %>
+		</div>
+	<%end%>

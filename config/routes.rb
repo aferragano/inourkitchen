@@ -18,7 +18,10 @@ Rails.application.routes.draw do
   root 'recipes#index'
   
   resources :groups
-  resources :recipes
+  resources :recipes do
+    resources :comments, only: [:new, :create, :destroy]
+  end
+
   resources :stories
   
   resources :users
@@ -28,6 +31,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

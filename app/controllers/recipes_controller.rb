@@ -3,7 +3,10 @@ class RecipesController < ApplicationController
 
 	def index
 		@recipes = Recipe.all 
-		@groups = Group.all
+		if session[:user_id]
+			@groups = User.find_by_id(session[:user_id]).groups
+			@user_recipes = User.find_by_id(session[:user_id]).recipes
+		end
 	end
  
 	def new
@@ -12,6 +15,8 @@ class RecipesController < ApplicationController
 
 	def create
 		@recipe = Recipe.create(recipe_params)
+		@user = User.find_by_id(session[:user_id])
+		@user.recipes << @recipe 
 		if @recipe.save
 			redirect_to @recipe
 		else
@@ -20,10 +25,13 @@ class RecipesController < ApplicationController
 	end
 
 	def show
+		@r_comments = @recipe.comments
+		@commentable = @recipe 
+		@comment = Comment.new
+
 	end
 
 	def update
-		
 		if @recipe.update(recipe_params)
 			redirect_to @recipe
 		else

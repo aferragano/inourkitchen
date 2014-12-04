@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 	def index
 		@group = Group.new
-		@groups = Group.all
+		@groups = User.find_by_id(session[:user_id]).groups
 	end
 
 	def new
@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
 
 	def create
 		@group = Group.create(group_params)
+		@group.users << User.find_by_id(session[:user_id])
 		if @group.save
 			redirect_to @group
 		else
@@ -20,6 +21,7 @@ class GroupsController < ApplicationController
 
 	def show
 		@recipes = @group.recipes
+		@g_users = @group.users
 	end
 
 	def edit
