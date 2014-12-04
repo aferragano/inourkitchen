@@ -26,7 +26,8 @@ class RecipesController < ApplicationController
 
 	def show
 		@r_comments = @recipe.comments
-		@commentable = @recipe 
+		@commentable = @recipe
+		@groups = @recipe.groups
 		@comment = Comment.new
 
 	end
