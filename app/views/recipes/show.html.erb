@@ -7,10 +7,18 @@
 	<h3>directions</h3>
 	<p><%= @recipe.directions %>
 		<br><button><%= link_to "edit", edit_recipe_path(@recipe) %></button>
-		<%=form_for :group_recipe, url:'/add_group_recipe' do |f|%>
+		
+</div>
+
+<div class="recipe-groups">	
+	<h5>apart of groups:</h5>
+	<% @groups.each do |group| %>
+		<p><%=group.name %></p>
+	<% end %>
+	<%=form_for :group_recipe, url:'/add_group_recipe' do |f|%>
 		<%=f.text_field :name, placeholder: "group name" %>
 		<%=f.submit %>
-		<% end %>
+	<% end %>
 </div>
  
 <div class="comment">
