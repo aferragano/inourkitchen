@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :destroy]
   end
   resources :group_recipes, only: [:new, :index, :create, :destroy]
-  get '/add_recipe' => 'group_recipes#new'
-  post '/add_recipe' => 'group_recipes#create'
+  get '/add_group_recipe' => 'group_recipes#new'
+  post '/add_group_recipe' => 'group_recipes#create'
 
 
   resources :stories

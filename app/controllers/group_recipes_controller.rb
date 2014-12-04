@@ -1,22 +1,22 @@
 class GroupRecipesController < ApplicationController
-before_filter :load_group 
+before_filter :load_recipe 
 
 	def index
 	end
 
 	def new
-		@new_recipe = @group_id.recipes.new
+
 	end
 
 	def create
-		if User.find_by(group_user_params)
-			@user = User.find_by(group_user_params)
+		if Group.find_by( group_recipe_params)
+			@group = Group.find_by(group_recipe_params)
 		else
 			redirect_to request.referrer, notice: "user not found"
 		end
-		@group_id.users << @user
-		if @group_id.save 
-			redirect_to request.referrer, notice: "user added"
+		@group.recipes << @recipe 
+		if @group.save 
+			redirect_to request.referrer
 		else
 			render :root
 		end
@@ -28,13 +28,14 @@ before_filter :load_group
 	private 
 
 	def group_recipe_params
+		params.require(:group_recipe).permit(:name)
 	end
 
-	def load_group 
+	def load_recipe 
+		p request.referrer
 		resource, id = request.referrer.split('/')[3, 4]
-		@group_id = Group.find(id)
+		@recipe = Recipe.find(id)
+		p @recipe
 	end
-
-end
 
 end
