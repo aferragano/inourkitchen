@@ -1,24 +1,29 @@
+<div id="recipe-container">
 
-<div class="display-recipe">
-	<h2><%=@recipe.title %></h2>
-	<h3><%=@recipe.summary %></h3>
-	<h3>Serves: <%=@recipe.serve_size%></h3>
-	<h3>time: <%=@recipe.time%></h3>
-	<h3>directions</h3>
-	<p><%= @recipe.directions %>
-		<br><button><%= link_to "edit", edit_recipe_path(@recipe) %></button>
-		
-</div>
+	<div class="display-recipe">
+		<h2><%=@recipe.title %></h2>
+		<h3><%=@recipe.summary %></h3>
+		<h3>Serves: <%=@recipe.serve_size%></h3>
+		<h3>time: <%=@recipe.time%></h3>
+		<h3>directions</h3>
+		<p><%= @recipe.directions %>
+			<br><button><%= link_to "edit", edit_recipe_path(@recipe) %></button>
+			
+	</div>
 
-<div class="recipe-groups">	
-	<h5>apart of groups:</h5>
-	<% @groups.each do |group| %>
-		<p><%=group.name %></p>
-	<% end %>
-	<%=form_for :group_recipe, url:'/add_group_recipe' do |f|%>
-		<%=f.text_field :name, placeholder: "group name" %>
-		<%=f.submit %>
-	<% end %>
+	<div class="recipe-groups">	
+		<h5>groups:</h5>
+		<ul>
+		<% @groups.each do |group| %>
+			<li><h6><%=group.name %></h6></li>
+		<% end %>
+	</ul>
+		<%=form_for :group_recipe, url:'/add_group_recipe' do |f|%>
+			<%=f.text_field :name, placeholder: "group name" %>
+			<%=f.submit "add to group" %>
+		<% end %>
+	</div>
+
 </div>
  
 <div class="comment">
@@ -33,7 +38,8 @@
 		<p><%= comment.content %></p>
 		<% if comment.user %>
 		<div class='user-comment-img'>user img</div>
-			<h5>by: <%= comment.user.first_name %></h5>
+			<h5>by: <%=link_to comment.user.first_name, user_path(comment.user) %></h5>
+
 			<% end %>
 		</div>
 	<%end%>

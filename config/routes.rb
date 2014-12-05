@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy' 
 
 
   # You can have the root of your site routed with "root"

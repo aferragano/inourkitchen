@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :set_user, only: [:show]
 
 	def index
 		@user = User.new
@@ -20,7 +20,10 @@ class UsersController < ApplicationController
 		end
 	end
 
-
+	def show
+		@recipes =@user.recipes
+		@groups = @user.groups
+	end
 
 	def destroy
 		@user.destroy
@@ -30,6 +33,10 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:username, :first_name, :last_name, :password, :password_confirmation, :email)
+	end
+
+	def set_user
+		@user = User.find(params[:id])
 	end
 
 end
