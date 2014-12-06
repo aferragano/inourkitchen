@@ -15,7 +15,7 @@
 		<h5>groups:</h5>
 		<ul>
 		<% @groups.each do |group| %>
-			<li><h6><%=group.name %></h6></li>
+			<li><h6><%=link_to group.name, group_path(group)%></h6></li>
 		<% end %>
 	</ul>
 		<%=form_for :group_recipe, url:'/add_group_recipe' do |f|%>
