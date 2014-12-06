@@ -1,26 +1,34 @@
 group name page:<h3><%=@group.name%></h3>
-recipe here ! 
- 
+
+ <%=link_to "edit", edit_group_path(@group) %>
 <div class="group-recipe-card">
+	<h3>recipes</h3>
+	<hr>
+	<ul>
 	<% @recipes.each do |r|%>
-		<%=link_to r.title, recipe_path(r)%>
-		<%= r.summary%><br>
+		<li><%=link_to r.title, recipe_path(r)%></li>
+		<h4><%= r.summary%></h4>
 	<% end %>
+	</ul>
 </div>
 
-<%=link_to "edit", edit_group_path(@group) %>
+
+
+<div class="group-recipe-card" id="members">
+	<h3>group members</h3>
+	<hr>
+	<ul>
+	<% @g_users.each do |user|%>
+		<li><%= user.username %></li>
+		<p><%= user.email %></p>
+		<% end %>
+	</ul>
+</div>
 
 <div class="group-user-card" id="add-user">
+	<h3>add a user to group</h3>
 	<%=form_for :group_user, url:'/add_user' do |f| %>
 		<%= f.text_field :email, placeholder: "email" %><br>
-		<%= f.submit %>
+		<%= f.submit "add user" %>
 	<% end %>
 </div>
-
-
-<% @g_users.each do |user|%>
-	<div class="group-user-card">
-		<p><%= user.username %></p>
-		<p><%= user.email %></p>
-	</div>
-<% end %>
