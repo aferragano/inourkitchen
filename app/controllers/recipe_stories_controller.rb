@@ -6,10 +6,11 @@ class RecipeStoriesController < ApplicationController
 
 	def new
 		# @new_user = @group_id.users.new
+		@recipe_story = @recipe.stories.new
 	end
 
 	def create
-		# if User.find_by(group_user_params)
+		# if Recipe.find_by(recipe_params)
 		# 	@user = User.find_by(group_user_params)
 		# else
 		# 	redirect_to request.referrer, notice: "user not found"
@@ -20,6 +21,14 @@ class RecipeStoriesController < ApplicationController
 		# else
 		# 	render :root
 		# end
+		#i have the recipe, @recipe so...
+		story = Story.create(recipe_story_params)
+		@recipe.stories << story
+		if @recipe.save
+			redirect_to request.referrer
+		else
+			render :new
+		end
 	end
 
 	def destroy
@@ -27,13 +36,13 @@ class RecipeStoriesController < ApplicationController
 
 	private 
 
-	# def group_user_params
-	# 	params.require(:group_user).permit(:email)
-	# end
+	def recipe_story_params
+		params.require(:recipe_story).permit(:title, :content)
+	end
 
 	def load_recipe 
 		resource, id = request.referrer.split('/')[3, 4]
-		@recipe_id = Recipe.find(id)
+		@recipe = Recipe.find(id)
 	end
 
 end

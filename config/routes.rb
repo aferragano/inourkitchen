@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   resources :stories
   
+  resources :recipe_stories, only: [:new, :index, :create, :destroy]
+  get '/add_recipe_story' => 'recipe_stories#new'
+  post '/add_recipe_story' => 'recipe_stories#create'
+
   resources :users
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
