@@ -26,13 +26,18 @@
 
 	<div class="recipe-stories">	
 		<h5>stories:</h5>
-			<p>this is where i want to list stories asscoiacted with this recipe</p>
+		<% @stories.each do |story| %>
+			<h4><%= link_to story.title, story_path(story) %></h4>
+			<%= story.content %>
+
+		<% end %>
 			<%=form_for :recipe_story, url:'/add_recipe_story' do |f|%>
 			<h3><%=f.text_field :title, placeholder: "story title" %></h3>
 			<%=f.text_area :content, placeholder: "story" %><br>
 			<%=f.submit "add story" %>
 		<% end %>
 	</div>
+
 
 </div>
  

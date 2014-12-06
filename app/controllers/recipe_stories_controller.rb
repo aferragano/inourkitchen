@@ -24,6 +24,7 @@ class RecipeStoriesController < ApplicationController
 		#i have the recipe, @recipe so...
 		story = Story.create(recipe_story_params)
 		@recipe.stories << story
+		current_user.stories << story
 		if @recipe.save
 			redirect_to request.referrer
 		else

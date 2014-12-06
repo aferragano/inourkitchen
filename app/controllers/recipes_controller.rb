@@ -28,6 +28,7 @@ class RecipesController < ApplicationController
 		@r_comments = @recipe.comments
 		@commentable = @recipe
 		@groups = @recipe.groups
+		@stories = @recipe.stories
 		@comment = Comment.new
 
 	end
