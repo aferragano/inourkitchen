@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
 			render :new
 		end
 	end
-
+ 
 	def show
 		@recipes = @group.recipes
 		@g_users = @group.users

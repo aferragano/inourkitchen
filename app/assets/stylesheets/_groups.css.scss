@@ -9,7 +9,6 @@
 	margin:5px;
 	border-radius: 10px;
 	vertical-align: text-top;
-
 	input {
 	border:none;
 	background-color:white;
@@ -25,7 +24,27 @@
 	}
 }
 .group-recipe-card {
-	background-color: #78A199;
+	background-color: #3F5765;
+	width: 250px;
+	color: #8299B1;
+	padding: 10px 0px 10px 0px;
+	margin:10px 0px 10px 0px;
+	border-radius: 5px;
+	display:inline-block;
+	vertical-align: text-top;
+	a:hover {
+	color: white;
+	}
+	h3 {
+	text-align:center;
+	}
+	h4 {
+	padding:0px;
+	margin:0px;
+	}
+	li {
+	list-style:none;
+	}
 }
 .group-user-card {
 	background-color: #78A199;
@@ -48,4 +67,13 @@
 	}
 
 
+}
+#members {
+	background-color: #78A199;
+	color:#3F5765;
+	vertical-align: text-top;
+
+	p {
+	margin:0px 0px 15px 8px;
+	}
 }

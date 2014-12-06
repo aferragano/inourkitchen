@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
 	def new
 		@recipe = Recipe.new
 	end
-
+ 
 	def create
 		@recipe = Recipe.create(recipe_params)
 		@user = User.find_by_id(session[:user_id])
@@ -26,7 +26,8 @@ class RecipesController < ApplicationController
 
 	def show
 		@r_comments = @recipe.comments
-		@commentable = @recipe 
+		@commentable = @recipe
+		@groups = @recipe.groups
 		@comment = Comment.new
 
 	end

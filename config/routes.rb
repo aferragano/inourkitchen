@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   resources :group_users, only: [:new, :index, :create, :destroy]
   get '/add_user' => 'group_users#new'
   post '/add_user' => 'group_users#create'
-
+ 
   resources :recipes do
     resources :comments, only: [:new, :create, :destroy]
   end
+  resources :group_recipes, only: [:new, :index, :create, :destroy]
+  get '/add_group_recipe' => 'group_recipes#new'
+  post '/add_group_recipe' => 'group_recipes#create'
+
 
   resources :stories
   
@@ -20,7 +24,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy' 
 
 
   # You can have the root of your site routed with "root"
