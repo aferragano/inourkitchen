@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   get '/add_group_recipe' => 'group_recipes#new'
   post '/add_group_recipe' => 'group_recipes#create'
 
-
+  resources :recipe_tags, only: [:new, :index, :create, :destroy]
+  get '/add_recipe_tag' => 'recipe_tags#new'
+  post '/add_recipe_tag' => 'recipe_tags#create'
+  
   resources :stories
   
   resources :recipe_stories, only: [:new, :index, :create, :destroy]
