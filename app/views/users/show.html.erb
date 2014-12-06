@@ -1,14 +1,17 @@
-
-<h2><%=@user.username %></h2>
-<h4><%=@user.first_name %> <%=@user.last_name %></h4>
-
-<%=@user.email%><br>
-
-<div class="user-recipes">
-	<h3>recipes</h3>
+<div class="user-info">
+	<label>username</label>
+	<h2><%= @user.username %></h2>
+	<label>name</label><br>
+	<h4><%= @user.first_name %> <%=@user.last_name %></h4>
+	<label>email :</label><br>
+	<h4><%= @user.email%></h4>
 </div>
+
+<div class="user-recipes" >
+	<h3>recipes</h3>
+<hr>
 <% @recipes.each do |recipe| %>
-	<div class="user-recipes">
+
 	 <%=link_to recipe.title, recipe_path(recipe) %>
 	</div>
 <% end %>
@@ -16,10 +19,10 @@
 
 <div class="user-groups">
 	<h3>groups</h3>
-</div>
+<hr>
 <% @groups.each do |group| %>
-	<div class="user-groups">
-	 <%=link_to group.name, group_path(group) %>
-	</div>
-<% end %>
 
+	 <p><%=link_to group.name, group_path(group) %></p>
+
+<% end %>
+	</div>

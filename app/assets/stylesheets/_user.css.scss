@@ -1,11 +1,33 @@
+.user-info {
+	width:350px;
+	background-color:#8299B1;
+	color: white;
+	border-radius:10px;
+	padding:5px;
+	margin:10px;
+	display:inline-block;
+	vertical-align: text-top;
+	label{
+	color:black;
+	font-size:.8em;
+	padding:0px 0px 0px 5px;
+	color: white;
+	opacity:.4;
+		}
+		h4,h3,h2 {
+		padding:0px 0px 0px 15px;;
+		margin:3px 3px 10px 3px;
+		}
+}
 .user-recipes {
 	background-color:#3F5765;
 	padding:2px;
 	border-radius:5px;
 	width: 150px;
-	margin:2px;
+	margin:10px;
 	text-align: center;
-
+	display:inline-block;
+	vertical-align: text-top;
 	h3 {
 		color:white;
 	}
@@ -19,8 +41,10 @@
 	padding:2px;
 	border-radius:5px;
 	width: 150px;
-	margin:2px;
+	margin:10px;
 	text-align: center;
+	display:inline-block;
+	vertical-align: text-top;
 	h3 {
 		color:white;
 	}
