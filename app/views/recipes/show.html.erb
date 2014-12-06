@@ -24,6 +24,15 @@
 		<% end %>
 	</div>
 
+		<div class="recipe-stories">	
+		<h5>stories:</h5>
+			<p>this is where i want to list stories asscoiacted with this recipe</p>
+			<%=form_for :group_recipe, url:'/add_group_recipe' do |f|%>
+			<%=f.text_field :name, placeholder: "group name" %>
+			<%=f.submit "add to group" %>
+		<% end %>
+	</div>
+
 </div>
  
 <div class="comment">
