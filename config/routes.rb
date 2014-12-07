@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :comments, only: [:new, :create, :destroy]
   end
+
+  resources :tags, only: [:show]
+
   resources :group_recipes, only: [:new, :index, :create, :destroy]
   get '/add_group_recipe' => 'group_recipes#new'
   post '/add_group_recipe' => 'group_recipes#create'
@@ -18,7 +21,7 @@ Rails.application.routes.draw do
   resources :recipe_tags, only: [:new, :index, :create, :destroy]
   get '/add_recipe_tag' => 'recipe_tags#new'
   post '/add_recipe_tag' => 'recipe_tags#create'
-  
+
   resources :stories
   
   resources :recipe_stories, only: [:new, :index, :create, :destroy]

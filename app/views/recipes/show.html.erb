@@ -15,7 +15,7 @@
 		<h5>tags:</h5>
 		<ul>
 		<% @tags.each do |tag| %>
-			<li><h6><%= tag.name%></h6></li>
+			<li><h6><%=link_to tag.name, tag_path(tag)%></h6></li>
 		<% end %>
 	</ul>
 		<%=form_for :recipe_tag, url:'/add_recipe_tag' do |f|%>
