@@ -30,6 +30,7 @@ class RecipesController < ApplicationController
 		@groups = @recipe.groups
 		@stories = @recipe.stories
 		@comment = Comment.new
+		@tags = @recipe.tags
 
 	end
 

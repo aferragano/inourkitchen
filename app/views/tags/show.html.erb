@@ -1,0 +1,8 @@
+<h2><%=@tag.name %></h2>
+
+<div class="tag">
+<% @recipes.each do |recipe| %>
+
+	<%=link_to recipe.title, recipe_path(recipe) %>
+
+	<% end %>
