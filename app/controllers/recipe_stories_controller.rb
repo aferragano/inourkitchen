@@ -10,18 +10,6 @@ class RecipeStoriesController < ApplicationController
 	end
 
 	def create
-		# if Recipe.find_by(recipe_params)
-		# 	@user = User.find_by(group_user_params)
-		# else
-		# 	redirect_to request.referrer, notice: "user not found"
-		# end
-		# @group_id.users << @user
-		# if @group_id.save 
-		# 	redirect_to request.referrer, notice: "user added"
-		# else
-		# 	render :root
-		# end
-		#i have the recipe, @recipe so...
 		story = Story.create(recipe_story_params)
 		@recipe.stories << story
 		current_user.stories << story

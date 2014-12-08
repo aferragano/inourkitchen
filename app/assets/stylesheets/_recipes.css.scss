@@ -1,21 +1,20 @@
 #recipe-container {
-	width:90%;
+	width:95%;
 	margin-right:auto;
 	margin-left:auto;
 }
-.recipe-groups, .recipe-tags {
+.recipe-groups, .recipe-tags, .recipe-stories, .comment{
 	background-color: #FAA687;
-	width:140px;
-	padding: 0px 5px 5px 5px;
+	width:43%;
+	padding: 5px 5px 5px 5px;
 	border-radius:5px;
 	margin-top:10px;
 	display:inline-block;
-	float:right;
+	vertical-align: text-top;
 	margin:10px;
-	display:block;
-	position:right;
 
-	input {
+
+	input, textarea {
 	border:none;
 	background-color: white;
 	border-radius:5px;
@@ -24,7 +23,6 @@
 	padding-right:auto;
 	float:center;
 	width:100%;
-
 
 	}
 	h6,h5 {
@@ -37,8 +35,28 @@
 .recipe-tags {
 	background-color:  #3F5765;
 	color: white;
-	display:block;
-	position:right;
+	display:inline-block;
+}
+.recipe-stories {
+	width: 30%;
+	float: right;
+	margin: 10px 5px 5px 5px;
+}
+.comment {
+	background-color:black;
+
+}
+.user-comment-img {
+	background-color: white;
+	height: 60px;
+	width: 60px;
+	border-radius:30px;
+	margin-right:0px;
+}
+.user-comment-img, .comment h5 {
+	float:right;
+	color:white;
+	margin-bottom: -5px;
 }
 
 #new-recipe, .display-recipe {
@@ -68,4 +86,5 @@
 #new-recipe .recipe-title {
 	font-size: 2em;
 }
+
 

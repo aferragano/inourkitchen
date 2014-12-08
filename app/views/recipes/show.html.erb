@@ -9,15 +9,13 @@
 		<p><%= @recipe.directions %>
 			<br><button><%= link_to "edit", edit_recipe_path(@recipe) %></button>
 			
-	</div>
-
-	<div class="recipe-tags">	
+		<div class="recipe-tags">	
 		<h5>tags:</h5>
 		<ul>
 		<% @tags.each do |tag| %>
 			<li><h6><%=link_to tag.name, tag_path(tag)%></h6></li>
 		<% end %>
-	</ul>
+		</ul>
 		<%=form_for :recipe_tag, url:'/add_recipe_tag' do |f|%>
 			<%=f.text_field :name, placeholder: "recipe tag" %>
 			<%=f.submit "add a tag" %>
@@ -25,7 +23,7 @@
 	</div>
 
 
-		<div class="recipe-groups">	
+	<div class="recipe-groups">	
 		<h5>groups:</h5>
 		<ul>
 		<% @groups.each do |group| %>
@@ -37,14 +35,34 @@
 			<%=f.submit "add to a group" %>
 		<% end %>
 	</div>
+	<div class="comment">
+		<h4>comment</h4>
+		<%= form_for [@commentable, @comment] do |f| %>
+			<%= f.text_area :content %><br>
+			<%= f.submit %>
+			<% end %>
+	</div> 
+		<% @r_comments.each do |comment| %>
+		<div class="comment">
+			<p><%= comment.content %></p>
+			<% if comment.user %>
+			<div class='user-comment-img'>user img</div>
+				<h5>by: <%=link_to comment.user.first_name, user_path(comment.user) %></h5>
+
+				<% end %>
+			</div>
+		<%end%>
+	</div>
+
 
 	<div class="recipe-stories">	
-		<h5>stories:</h5>
+		<h4>stories:</h4>
 		<% @stories.each do |story| %>
 			<h4><%= link_to story.title, story_path(story) %></h4>
 			<%= story.content %>
 
-		<% end %>
+		<% end %><br>
+		<h4>add a story</h4>
 			<%=form_for :recipe_story, url:'/add_recipe_story' do |f|%>
 			<h3><%=f.text_field :title, placeholder: "story title" %></h3>
 			<%=f.text_area :content, placeholder: "story" %><br>
@@ -55,20 +73,4 @@
 
 </div>
  
-<div class="comment">
-	<h4>comment</h4>
-	<%= form_for [@commentable, @comment] do |f| %>
-		<%= f.text_area :content %><br>
-		<%= f.submit %>
-		<% end %>
-</div> 
-	<% @r_comments.each do |comment| %>
-	<div class="comment">
-		<p><%= comment.content %></p>
-		<% if comment.user %>
-		<div class='user-comment-img'>user img</div>
-			<h5>by: <%=link_to comment.user.first_name, user_path(comment.user) %></h5>
 
-			<% end %>
-		</div>
-	<%end%>
