@@ -10,6 +10,9 @@ Rails.application.routes.draw do
  
   resources :recipes do
     resources :comments, only: [:new, :create, :destroy]
+    collection do
+      match 'search' =>'recipe#search', via: [:get, :post], as: :search
+    end
   end
 
   resources :tags, only: [:show]

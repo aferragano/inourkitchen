@@ -2,12 +2,17 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
 	def index
+		@q = Recipe.new
+		
+
 		@recipes = Recipe.all 
 		if session[:user_id]
 			@groups = User.find_by_id(session[:user_id]).groups
 			@user_recipes = User.find_by_id(session[:user_id]).recipes
 		end
 	end
+
+
  
 	def new
 		@recipe = Recipe.new
@@ -54,5 +59,9 @@ class RecipesController < ApplicationController
 
 	def set_recipe
 		@recipe = Recipe.find(params[:id])
+	end
+
+	def q_recipe_params
+		params.require(:recipe).permit(:title)
 	end
 end
