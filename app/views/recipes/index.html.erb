@@ -1,14 +1,12 @@
-
-
-	<p>search by tags</p>
-	<div class="index-cards">
+<p>search by tags</p>
+<div class="index-cards">
 	<h3>top recipes</h3>
-		<ul>
-			<% @recipes.each do |r| %>
-				<li><%=link_to r.title, recipe_path(r)%></li>
-			<% end %>
+	<ul>
+		<% @recipes.each do |r| %>
+			<li><%=link_to r.title, recipe_path(r)%></li>
+		<% end %>
 	</ul>
-	</div>
+</div>
 
 
 	<% if session[:user_id] %>

@@ -1,104 +1,62 @@
 @import "bourbon";
 @import 'groups';
 @import 'recipes';
+@import 'new_recipe';
 @import 'user';
 @import 'tag';
+@import 'comment';
 
 html {
-	font-family: 'Lora', serif;
-	background-color:#F0EBD9;
-}
-body{
-	padding: 0px;
-	margin: 0px;
-}
-
-ul, li {
-	margin: 0px;
-	padding-top:0px;
-}
-
-nav {
+	font-family: 'Quicksand', sans-serif;
+	background-color:#FAF5F2;
+	width:100%;
+	padding:0px;
 	margin:0px;
-	color: #F0EBD9;
-	background-color: #FAA687;
-	padding: 0px;
+}
+
+body, ul, h1{
+	padding:0px;
+	margin:0px;
+}
+nav {
+	background-color:white;
 	width: 100%;
-	height: 60px;
-	opacity: .9;
-}
-a:visited {
-	color: #F0EBD9;
-}
-nav li, a {
-	display: inline-block;
-	text-decoration: none;
-	color: #F0EBD9;
-}
+	margin: 0px;
+	padding:15px 0px 5px 20px;
+	border: 1px solid #A61900;
+	border-top:none;
 
-a:hover {
-	color: #3F5765;
-}
-button:hover {
-	background-color: #3F5765;
-}
-button, button a:visited {
-	font-size: 1em;
-	color: #F0EBD9;
-	background-color: #78A199;
-	border: none;
-	border-radius: 5px;
-}
-nav button{
-	margin-left:15px;
-	padding-right:5px;
-}
-
-.options {
-	float: right;
-	display: inline;
-	margin-top:20px;
-	margin-right:5px;
-}
-.index-cards, {
-	width:300px;
-	background-color: #3F5765;
-	display: inline-block;
-	vertical-align: text-top;
-	color: #FAA687;
-	padding:5px;
-	margin:5px;
-	border-radius:10px;
-	opacity: .8;
-}
-.index-cards li, .index-cards a {
-	color: #F0EBD9;
-	text-decoration: none;
+	a,li {
+	font-size:1em;
+	text-decoration:none;
+	color: #A61900;
 	list-style:none;
-	padding-bottom:5px;
-}
-.index-cards a:hover {
-	color: #FAA687;
-}
-.login-div, .sign-up-div {
-	background-color: #78A199;
-	width:170px;
-	padding:5px;
-	margin:5px;
-	float:center;
-	text-align: center;
-	margin-left:auto;
-	margin-right:auto;
-}
-.plate {
-	height:20px;
-	width:20px;
-	border-radius:5px;
-	background-color: #78A199;
 	display:inline-block;
-	opacity:.6;
+	}
+
+
+	button {
+	font-size:.8em;
+	color: #A61900;
+	background-color:white;
+	border-radius:5px;
+	border: 1px solid #A61900;
+	float:right;
+	}
 }
-#first{
-	margin-left:-30px;
-	background-color: #3F5765;
+.options {
+	float:right;
+	padding-right:50px;
+}
+.login-div, .sign-up-div{
+	font-size:.8em;
+	color: #A61900;
+	background-color:white;
+	border-radius:5px;
+	border: 1px solid #A61900;
+	float:right;
+	text-align:center;
+	padding:5px;
+	margin:5px 45px 0px 0px;
+
 }
