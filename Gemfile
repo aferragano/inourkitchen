@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem "rmagick"
+gem 'carrierwave', '~> 0.10.0'
+gem 'jquery-fileupload-rails', '~> 0.4.1'
 gem 'bourbon'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0.beta2'

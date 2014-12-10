@@ -32,10 +32,8 @@ before_filter :load_recipe
 	end
 
 	def load_recipe 
-		p request.referrer
 		resource, id = request.referrer.split('/')[3, 4]
 		@recipe = Recipe.find(id)
-		p @recipe
 	end
 
 end

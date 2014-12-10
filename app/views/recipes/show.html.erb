@@ -2,8 +2,11 @@
 
 	<div class="display-recipe">
 		<h2 id="title"><%=@recipe.title %></h2>
+		
 		<h4 id="summary"><%=@recipe.summary %></h4>
-
+		<% @images.each do |i| %>
+			<%= image_tag i.image_url, class: "recipe-image" %><br>
+		<% end %>
 		<h5>serves:</h5> 
 		<p><%=@recipe.serve_size%></p><br>
 		<h5>time:</h5> 
@@ -53,6 +56,12 @@
 			<% end %>
 		</div>
 	<%end%>
+	<div class="add-image">
+		<%=form_for [@imageable, @image] do |f| %>
+			<%=f.file_field :image_url %>
+			<%= f.submit %>
+		<% end %>
+	</div>	
 
 
 	<div class="recipe-stories">	

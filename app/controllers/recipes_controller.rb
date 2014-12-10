@@ -27,10 +27,13 @@ class RecipesController < ApplicationController
 	def show
 		@r_comments = @recipe.comments
 		@commentable = @recipe
+		@imageable = @recipe
 		@groups = @recipe.groups
 		@stories = @recipe.stories
 		@comment = Comment.new
+		@image = Image.new
 		@tags = @recipe.tags
+		@images = @recipe.images
 
 	end
 

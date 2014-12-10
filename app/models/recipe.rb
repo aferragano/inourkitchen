@@ -1,8 +1,9 @@
 class Recipe < ActiveRecord::Base
 	belongs_to :user
+	mount_uploader :image_url, ImageUploader
 
 	has_many :comments, :as => :commentable
-	has_many :images, :as => :imageable 
+	has_many :images, :as => :imageable
 
 	has_many :group_recipes
 	has_many :groups, through: :group_recipes
