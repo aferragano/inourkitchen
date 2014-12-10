@@ -1,0 +1,31 @@
+#new-recipe {
+	background-color: white;
+	border: 1px solid #A61900;
+	border-radius:5px;
+	width:70%;
+	margin:10px auto 10px auto;
+	padding:10px;
+
+	.recipe-title {
+		height:20px;
+		width:175px;
+	}
+	input {
+		font-size:1em;
+		padding-bottom:5px;
+		margin-bottom: 10px;
+	}
+	textarea {
+		font-size:1em;
+		width:80%;
+		heigth: 50px;
+	}
+	.recipe-ingredients{
+		width:30%;
+		height:80px;
+	}
+	.recipe-directions {
+		height:300px;
+		width:95%;
+	}
+}

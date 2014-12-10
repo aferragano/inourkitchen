@@ -1,12 +1,14 @@
 @import "bourbon";
 @import 'groups';
 @import 'recipes';
+@import 'new_recipe';
 @import 'user';
 @import 'tag';
+@import 'comment';
 
 html {
 	font-family: 'Quicksand', sans-serif;
-	background-color:#FFF8E8;
+	background-color:#FAF5F2;
 	width:100%;
 	padding:0px;
 	margin:0px;
@@ -20,8 +22,9 @@ nav {
 	background-color:white;
 	width: 100%;
 	margin: 0px;
-	padding:5px 0px 5px 20px;
+	padding:15px 0px 5px 20px;
 	border: 1px solid #A61900;
+	border-top:none;
 
 	a,li {
 	font-size:1em;
@@ -35,7 +38,7 @@ nav {
 	button {
 	font-size:.8em;
 	color: #A61900;
-	background-color:#FFF8E8;
+	background-color:white;
 	border-radius:5px;
 	border: 1px solid #A61900;
 	float:right;
