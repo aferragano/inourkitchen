@@ -5,8 +5,8 @@
 		
 		<h4 id="summary"><%=@recipe.summary %></h4>
 		<% @images.each do |i| %>
-			<%= image_tag i.image_url, class: "recipe-image" %><br>
-		<% end %>
+			<%= image_tag i.image_url, class: "recipe-image" %>
+		<% end %><br>
 		<h5>serves:</h5> 
 		<p><%=@recipe.serve_size%></p><br>
 		<h5>time:</h5> 
