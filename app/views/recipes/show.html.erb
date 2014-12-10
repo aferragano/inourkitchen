@@ -1,20 +1,32 @@
 <div id="recipe-container">
 
 	<div class="display-recipe">
+		<div id="title">
 		<h2 id="title"><%=@recipe.title %></h2>
+			<button><%= link_to "edit", edit_recipe_path(@recipe) %></button>
+
+		<h5>serves:</h5> 
+			<p><%=@recipe.serve_size%></p>
+			| <h5>time:</h5> 
+			<p><%=@recipe.time%></p>
+	</div>
 		
 		<h4 id="summary"><%=@recipe.summary %></h4>
 		<% @images.each do |i| %>
 			<%= image_tag i.image_url, class: "recipe-image" %>
 		<% end %><br>
-		<h5>serves:</h5> 
-		<p><%=@recipe.serve_size%></p><br>
-		<h5>time:</h5> 
-		<p><%=@recipe.time%></p><br>
-		<h5>directions:</h5>
-		<p><%= @recipe.directions %></p>
-			<br><button><%= link_to "edit", edit_recipe_path(@recipe) %></button><br>
-	<div class="recipe-tags">	
+
+
+		<div class="recipe-element">
+			<h5>ingredients:</h5><br>
+			<p><%=@recipe.ingredients%></p>	
+		</div>
+
+		<div class="recipe-element" id="directions">
+			<h5>directions:</h5>
+			<p><%= @recipe.directions %></p>
+		</div>
+		<div class="recipe-tags">	
 			<h5>tags:</h5>
 			<ul>
 				<% @tags.each do |tag| %>
