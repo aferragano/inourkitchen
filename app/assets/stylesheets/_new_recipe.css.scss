@@ -1,10 +1,10 @@
-#new-recipe {
+#new-recipe, #recipe-edit {
 	background-color: white;
 	border: 1px solid #A61900;
 	border-radius:5px;
 	width:70%;
 	margin:10px auto 10px auto;
-	padding:10px;
+	padding: 10px 10px 35px 10px;
 
 	.recipe-title {
 		height:20px;
@@ -28,4 +28,10 @@
 		height:300px;
 		width:95%;
 	}
+	.recipe-save-btn {
+		margin-top:5px;
+		display:block;
+		float:right;
+	}
+
 }

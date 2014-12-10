@@ -10,6 +10,6 @@
 		<%= f.text_area :ingredients, placeholder:"list all ingredients", class: "recipe-ingredients" %><br>
 		<p> step-by-step directions</p>
 		<%= f.text_area :directions, placeholder:"please provide step-by-step instructions", class: "recipe-directions" %><br>
-		<%=f.submit %>
+		<%=f.submit "save recipe", class: "recipe-save-btn" %>
 	<%end%>
 </div>
