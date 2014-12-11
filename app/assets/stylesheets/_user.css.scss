@@ -1,0 +1,44 @@
+.user-image {
+	height: auto;
+	width:100px;
+	border-radius:25px;
+	margin:2px;
+	float:right;
+}
+.user {
+	width:40%;
+	margin:10px;
+	background-color:white;
+	border: 1px solid #A61900;
+	border-radius:15px;
+	padding:20px;
+	display:inline-block;
+	vertical-align:text-top;
+
+	h2, h4{
+		padding:2px;
+		margin:3px;
+	}
+
+	h6 {
+		padding:6px;
+		margin:1px;
+	}
+	a,button {
+
+		position:inline-block;
+		float:right;
+		background-color:#A61900;
+		color:white;
+		border:none;
+		border-radius:5px;
+	}
+	}
+		#user-groups, #user-recipes{
+		width: 140px;
+			h3 {
+				text-align:left;
+				margin: 0pc auto 0px auto;
+				padding:8px;
+			}
+}

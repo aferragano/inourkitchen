@@ -1,28 +1,32 @@
-<div class="user-info">
-	<label>username</label>
+<div class="user">
+	<% @user_image.each do |image| %>
+		<%=image_tag image.image_url, class: "user-image" %>
+	<%end%>
+	<h6>username</h6>
 	<h2><%= @user.username %></h2>
-	<label>name</label><br>
+	<h6>name</h6>
 	<h4><%= @user.first_name %> <%=@user.last_name %></h4>
-	<label>email :</label><br>
+	<h6>email :</h6>
 	<h4><%= @user.email%></h4>
-</div>
+	<button><%= link_to "edit", edit_user_path(@user) %></button>
+</div><br>
 
-<div class="user-recipes" >
+<div class="user" id="user-recipes" >
 	<h3>recipes</h3>
 <hr>
 <% @recipes.each do |recipe| %>
 
-	 <%=link_to recipe.title, recipe_path(recipe) %>
-	</div>
+	 <h4><%=link_to recipe.title, recipe_path(recipe) %></h4>
+	
 <% end %>
+</div>
 
-
-<div class="user-groups">
+<div class="user" id="user-groups">
 	<h3>groups</h3>
 <hr>
 <% @groups.each do |group| %>
 
-	 <p><%=link_to group.name, group_path(group) %></p>
+	 <h4><%=link_to group.name, group_path(group) %></h4>
 
 <% end %>
 	</div>

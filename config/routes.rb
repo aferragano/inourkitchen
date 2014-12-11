@@ -30,7 +30,9 @@ Rails.application.routes.draw do
   get '/add_recipe_story' => 'recipe_stories#new'
   post '/add_recipe_story' => 'recipe_stories#create'
 
-  resources :users
+  resources :users do
+    resources :images, only: [:new, :create, :destroy]
+  end
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
