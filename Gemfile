@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'draper'
 gem "rmagick"
 gem 'carrierwave', '~> 0.10.0'
 gem 'jquery-fileupload-rails', '~> 0.4.1'

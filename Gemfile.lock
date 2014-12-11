@@ -63,6 +63,11 @@ GEM
     columnize (0.8.9)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    draper (1.4.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.2.2)
     globalid (0.3.0)
@@ -121,6 +126,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    request_store (1.1.0)
     rmagick (2.13.4)
     sass (3.4.8)
     sass-rails (5.0.0.beta1)
@@ -167,6 +173,7 @@ DEPENDENCIES
   byebug
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.0.0)
+  draper
   jbuilder (~> 2.0)
   jquery-fileupload-rails (~> 0.4.1)
   jquery-rails (~> 4.0.0.beta2)
