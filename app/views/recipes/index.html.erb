@@ -3,10 +3,9 @@
 	<h3>top recipes</h3>
 	<ul>
 		<% @recipes.each do |r| %>
-			<li><%=link_to r.title, recipe_path(r)%></li>
-			<% r.images.each do |image| %>
-				<%=image_tag image.image_url, class: "thumb-img"%>
-			<% end %>
+			<li><h4><%=link_to r.title, recipe_path(r)%></h4></li>
+			<%=image_tag first_image(r.images), class: "first-recipe-image" %>
+			<h6><%=r.summary %></h6><hr>
 		<% end %>
 	</ul>
 </div>
@@ -18,9 +17,9 @@
 		<ul>
 				<% @user_recipes.each do |r| %>
 					<li><%=link_to r.title, recipe_path(r)%></li>
-					<% r.images.each do |image| %>
-					<%=image_tag image.image_url, class: "thumb-img"%>
-					<% end %>
+					
+					<%=image_tag first_image(r.images), class: "first-recipe-image" %>
+					<h6><%=r.summary %></h6><hr>
 				<% end %>
 		</ul>
 		<button><%= link_to("add recipe", new_recipe_path) %></button>
