@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
 	has_many :groups, through: :group_users
 
 	has_secure_password
+	validates :email, presence: true
 end

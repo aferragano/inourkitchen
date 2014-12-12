@@ -3,8 +3,8 @@ class CreateRecipeStories < ActiveRecord::Migration
     create_table :recipe_stories do |t|
     	t.belongs_to :user
     	
-    	t.belongs_to :recipe
-    	t.belongs_to :story
+    	t.belongs_to :recipe, null: false
+    	t.belongs_to :story, null: false
 
       t.timestamps
     end
