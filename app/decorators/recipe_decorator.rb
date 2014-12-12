@@ -11,7 +11,6 @@ class RecipeDecorator < Draper::Decorator
   # `helpers` (aka `h`). You can override attributes, for example:
   #
     def created_at(item)
-      
         item.created_at.strftime("%a %m/%d/%y")
     end
 

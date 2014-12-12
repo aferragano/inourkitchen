@@ -7,4 +7,8 @@ module ApplicationHelper
 		end
 		lib[0]
 	end 
+
+	def created_at(item)
+        item.created_at.strftime("%m/%d/%y")
+   end
 end

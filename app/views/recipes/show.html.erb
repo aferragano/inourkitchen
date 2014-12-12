@@ -69,8 +69,10 @@
 		<h6><%= comment.content %></h6>
 		<% if comment.user %>
 			
-	<label>by: <%=link_to comment.user.first_name, user_path(comment.user) %></label>
+	<label>by: <%=link_to comment.user.first_name, user_path(comment.user) %>
+		<%= created_at(comment) %></label>
 			<%= image_tag first_image(comment.user.images), class: "first-user-image" %>
+
 
 			<% end %>
 		</div>
