@@ -127,9 +127,10 @@
 
 	.recipe-tags, .recipe-groups {
 		color: #A61900;
+		width:100%;
 		position:relative;
-		float:bottom;
 		padding:5px;
+		bottom:-10px;
 
 		h5,ul{
 			display:block;

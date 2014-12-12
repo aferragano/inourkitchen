@@ -26,6 +26,7 @@
 			<h5>directions:</h5>
 			<p><%= @recipe.directions %></p>
 		</div><br>
+
 		<div class="recipe-tags">	
 			<h5>tags:</h5>
 			<ul>
@@ -38,6 +39,7 @@
 				<%=f.submit "add a tag" %>
 			<% end %>
 		</div><br>
+
 	<div class="recipe-groups">	
 		<h5>groups:</h5>
 		<ul>
@@ -51,12 +53,14 @@
 		<% end %>
 		</div>
 	</div>
+
 		<div class="add-image">
 		<%=form_for [@imageable, @image] do |f| %>
 			<%=f.file_field :image_url %>
 			<%= f.submit %>
 		<% end %>
 	</div>	
+
 	<div class="comment">
 		<h6>comment</h6>
 		<%= form_for [@commentable, @comment] do |f| %>
@@ -72,8 +76,6 @@
 	<label>by: <%=link_to comment.user.first_name, user_path(comment.user) %>
 		<%= created_at(comment) %></label>
 			<%= image_tag first_image(comment.user.images), class: "first-user-image" %>
-
-
 			<% end %>
 		</div>
 	<%end%>
@@ -85,11 +87,13 @@
 		<div class="recipe-stories">
 			<h4><%= link_to story.title, story_path(story) %></h4>
 			<p><%= story.content %></p>
-			<%= first_image(story.images) %>
-			<h6><%= created_at(story) %></h6>
+			<h6> <%= created_at(story) %></h6>
+			<%=link_to story.user.username, user_path(story.user) %>
+			<%=image_tag first_image(story.user.images), class: "first-user-image"%>
+
 		</div>
-		<% end %><br>
-		<div class="recipe-stories">
+		<% end %>
+	<div class="recipe-stories">
 		<h4>add a story</h4>
 			<%=form_for :recipe_story, url:'/add_recipe_story' do |f|%>
 			<h3><%=f.text_field :title, placeholder: "story title" %></h3>
@@ -97,8 +101,6 @@
 			<%=f.submit "add story" %>
 		<% end %>
 	</div>
-
-
 </div>
  
 
