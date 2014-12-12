@@ -25,7 +25,7 @@
 		<div class="recipe-element" id="directions">
 			<h5>directions:</h5>
 			<p><%= @recipe.directions %></p>
-		</div>
+		</div><br>
 		<div class="recipe-tags">	
 			<h5>tags:</h5>
 			<ul>
@@ -34,10 +34,10 @@
 				<% end %>
 			</ul>
 			<%=form_for :recipe_tag, url:'/add_recipe_tag' do |f|%>
-				<%=f.text_field :name, placeholder: "recipe tag" %><br>
+				<%=f.text_field :name, placeholder: "recipe tag" %>
 				<%=f.submit "add a tag" %>
 			<% end %>
-		</div>
+		</div><br>
 	<div class="recipe-groups">	
 		<h5>groups:</h5>
 		<ul>
@@ -46,13 +46,19 @@
 		<% end %>
 	</ul>
 		<%=form_for :group_recipe, url:'/add_group_recipe' do |f|%>
-			<%=f.text_field :name, placeholder: "group name" %><br>
+			<%=f.text_field :name, placeholder: "group name" %>
 			<%=f.submit "add to a group" %>
 		<% end %>
 		</div>
 	</div>
+		<div class="add-image">
+		<%=form_for [@imageable, @image] do |f| %>
+			<%=f.file_field :image_url %>
+			<%= f.submit %>
+		<% end %>
+	</div>	
 	<div class="comment">
-		<h4>comment</h4>
+		<h6>comment</h6>
 		<%= form_for [@commentable, @comment] do |f| %>
 			<%= f.text_area :content %><br>
 			<%= f.submit "post comment" %>
@@ -60,20 +66,15 @@
 	</div> 
 	<% @r_comments.each do |comment| %>
 	<div class="comment">
-		<p><%= comment.content %></p>
+		<h6><%= comment.content %></h6>
 		<% if comment.user %>
-		<div class='user-comment-img'>user img</div>
-			<h5>by: <%=link_to comment.user.first_name, user_path(comment.user) %></h5>
+			
+	<label>by: <%=link_to comment.user.first_name, user_path(comment.user) %></label>
+			<%= image_tag first_image(comment.user.images), class: "first-user-image" %>
 
 			<% end %>
 		</div>
 	<%end%>
-	<div class="add-image">
-		<%=form_for [@imageable, @image] do |f| %>
-			<%=f.file_field :image_url %>
-			<%= f.submit %>
-		<% end %>
-	</div>	
 
 
 	<div class="recipe-stories">	

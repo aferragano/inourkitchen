@@ -4,6 +4,9 @@
 	<ul>
 		<% @recipes.each do |r| %>
 			<li><%=link_to r.title, recipe_path(r)%></li>
+			<% r.images.each do |image| %>
+				<%=image_tag image.image_url, class: "thumb-img"%>
+			<% end %>
 		<% end %>
 	</ul>
 </div>
@@ -15,6 +18,9 @@
 		<ul>
 				<% @user_recipes.each do |r| %>
 					<li><%=link_to r.title, recipe_path(r)%></li>
+					<% r.images.each do |image| %>
+					<%=image_tag image.image_url, class: "thumb-img"%>
+					<% end %>
 				<% end %>
 		</ul>
 		<button><%= link_to("add recipe", new_recipe_path) %></button>
