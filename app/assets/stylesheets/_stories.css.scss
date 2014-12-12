@@ -1,0 +1,33 @@
+.recipe-stories {
+	margin:5px auto 5px auto;
+	width:95%;
+	background-color:white;
+	padding:10px;
+	border-radius:10px;
+	border: 2px solid #F2BAAE;
+
+	h4 {
+		font-size:1.2em;
+		margin:3px 0px 3px 10px;
+		a {
+			text-decoration:none;
+			color: #A61900;
+		}
+	}
+	p {
+
+	}
+	h6 {
+		margin:1px;
+		padding:1px;
+		position:relative;
+		right:-10px;
+	}
+	input {
+		font-size:1em;
+	}
+	textarea {
+		width:60%;
+		height:100px;
+	}
+}

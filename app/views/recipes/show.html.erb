@@ -78,14 +78,18 @@
 		</div>
 	<%end%>
 
-
-	<div class="recipe-stories">	
-		<h4>stories:</h4>
+	
+		<h3>stories:</h3>
+		
 		<% @stories.each do |story| %>
+		<div class="recipe-stories">
 			<h4><%= link_to story.title, story_path(story) %></h4>
-			<%= story.content %>
-
+			<p><%= story.content %></p>
+			<%= first_image(story.images) %>
+			<h6><%= created_at(story) %></h6>
+		</div>
 		<% end %><br>
+		<div class="recipe-stories">
 		<h4>add a story</h4>
 			<%=form_for :recipe_story, url:'/add_recipe_story' do |f|%>
 			<h3><%=f.text_field :title, placeholder: "story title" %></h3>

@@ -1,8 +1,8 @@
  
-<h1>GROUPS INDEX PAGE</h1>
+<h1>GROUPS</h1>
  
 
-<div class="group-index-card">
+<div class="index-cards">
 	create a new group
 	<%=form_for @group, :url => groups_path do |f|%>
 		<%=f.text_field :name, placeholder: "new group name" %>
@@ -11,13 +11,15 @@
 </div>
 
 <% @groups.each do |g|%>
-	<div class="group-index-card">
+	<div class="index-cards">
 		<h3><%= link_to g.name, group_path(g)%></h3>
 		<% g.recipes do |r| %>
 			<%=r.title%>
 		<% end %>
 		<% g.users.each do |user| %>
-			<h4><%=user.username %></h4>
+			<h4><%=link_to user.username, user_path(user) %></h4>
+			<%= image_tag first_image(user.images), class: "first-user-image" %>
+			<hr>
 		<%end %>
 	</div>
 <%end%>

@@ -5,7 +5,9 @@ module ApplicationHelper
 		images.each do |img|
 			lib << img.image_url
 		end
-		lib[0]
+		if lib[0]
+			lib[0]
+		end
 	end 
 
 	def created_at(item)
