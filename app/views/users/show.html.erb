@@ -18,7 +18,7 @@
 
 	 <h4><%=link_to recipe.title, recipe_path(recipe) %></h4>
 	 <%  recipe.images.each do |img| %>
-	 <%=image_tag img.image_url, class: "sml-rec-img"%>
+	 <%=image_tag img.image_url, class: "first-recipe-image"%>
 	 <% end %>
 	
 <% end %>
