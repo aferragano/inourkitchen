@@ -10,9 +10,9 @@ class RecipeStoriesController < ApplicationController
 	end
 
 	def create
-		story = Story.create(recipe_story_params)
+		story = current_user.stories.create(recipe_story_params)
 		@recipe.stories << story
-		current_user.stories << story
+
 		if @recipe.save
 			redirect_to request.referrer
 		else

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-	has_many :images, :as => :imageable 
+	has_many :images, :as => :imageable
+	
 	has_many :recipes
 	has_many :comments
 	has_many :stories

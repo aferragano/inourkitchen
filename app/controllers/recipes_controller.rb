@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 			@groups = User.find_by_id(session[:user_id]).groups
 			@user_recipes = User.find_by_id(session[:user_id]).recipes
 		end
+		
 	end
  
 	def new
@@ -27,10 +28,13 @@ class RecipesController < ApplicationController
 	def show
 		@r_comments = @recipe.comments
 		@commentable = @recipe
+		@imageable = @recipe
 		@groups = @recipe.groups
 		@stories = @recipe.stories
 		@comment = Comment.new
+		@image = Image.new
 		@tags = @recipe.tags
+		@images = @recipe.images
 
 	end
 

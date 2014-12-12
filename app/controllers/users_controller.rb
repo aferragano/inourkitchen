@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :edit]
 
 	def index
 		@user = User.new
@@ -23,10 +23,19 @@ class UsersController < ApplicationController
 	def show
 		@recipes =@user.recipes
 		@groups = @user.groups
+		@user_image = @user.images
 	end
 
 	def destroy
 		@user.destroy
+	end
+
+	def edit
+		@imageable = @user
+		@image = Image.new
+	end
+
+	def update
 	end
 
 	private
