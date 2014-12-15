@@ -11,34 +11,34 @@
 			<p><%=@recipe.time%></p>
 	</div>
 		
-		<h4 id="summary"><%=@recipe.summary %></h4>
-		<% @images.each do |i| %>
-			<%= image_tag i.image_url, class: "recipe-image" %>
-		<% end %><br>
+	<h4 id="summary"><%=@recipe.summary %></h4>
+	<% @images.each do |i| %>
+		<%= image_tag i.image_url, class: "recipe-image" %>
+	<% end %><br>
 
 
-		<div class="recipe-element">
-			<h5>ingredients:</h5><br>
-			<p><%=@recipe.ingredients%></p>	
-		</div>
+	<div class="recipe-element">
+		<h5>ingredients:</h5><br>
+		<p><%=@recipe.ingredients%></p>	
+	</div>
 
-		<div class="recipe-element" id="directions">
-			<h5>directions:</h5>
-			<p><%= @recipe.directions %></p>
-		</div><br>
+	<div class="recipe-element" id="directions">
+		<h5>directions:</h5>
+		<p><%= @recipe.directions %></p>
+	</div><br>
 
-		<div class="recipe-tags">	
-			<h5>tags:</h5>
-			<ul>
-				<% @tags.each do |tag| %>
-					<li><h6><%=link_to tag.name, tag_path(tag)%></h6></li>
-				<% end %>
-			</ul>
-			<%=form_for :recipe_tag, url:'/add_recipe_tag' do |f|%>
-				<%=f.text_field :name, placeholder: "recipe tag" %>
-				<%=f.submit "add a tag" %>
+	<div class="recipe-tags">	
+		<h5>tags:</h5>
+		<ul>
+			<% @tags.each do |tag| %>
+				<li><h6><%=link_to tag.name, tag_path(tag)%></h6></li>
 			<% end %>
-		</div><br>
+		</ul>
+		<%=form_for :recipe_tag, url:'/add_recipe_tag' do |f|%>
+			<%=f.text_field :name, placeholder: "recipe tag" %>
+			<%=f.submit "add a tag" %>
+		<% end %>
+	</div><br>
 
 	<div class="recipe-groups">	
 		<h5>groups:</h5>

@@ -3,11 +3,13 @@ class RecipesController < ApplicationController
 
 	def index
 		@recipes = Recipe.all 
-		if session[:user_id]
+		if current_user
 			@groups = User.find_by_id(session[:user_id]).groups
 			@user_recipes = User.find_by_id(session[:user_id]).recipes
-		end
-		
+		else
+			@groups = Group.all
+			@user_recipes = Recipe.all
+		end		
 	end
  
 	def new
