@@ -1,8 +1,10 @@
 <p>search by tags</p>
+
+
 <div class="index-cards">
-	<h3>top recipes</h3>
+	<h3>top public recipes</h3>
 	<ul>
-		<% @recipes.each do |r| %>
+		<% @public_recipes.each do |r| %>
 			<li><h4><%=link_to r.title, recipe_path(r)%></h4></li>
 			<%=image_tag first_image(r.images), class: "first-recipe-image" %>
 			<h6><%=r.summary %></h6><hr>
@@ -11,29 +13,33 @@
 </div>
 
 
+<% if not session[:id] %>
 
-<div class="index-cards">
-	<h3>my recipes</h3>
-	<ul>
-	<% @user_recipes.each do |r| %>
-		<li><%=link_to r.title, recipe_path(r)%></li>	
-		<%=image_tag first_image(r.images), class: "first-recipe-image" %>
-		<h6><%=r.summary %></h6><hr>
-	<% end %>
-	</ul>
-	<button><%= link_to("add recipe", new_recipe_path) %></button>
-</div>
-		
+	<div class="index-cards">
+		<h3>my recipes</h3>
+		<ul>
+		<% @user_recipes.each do |r| %>
+			<li><%=link_to r.title, recipe_path(r)%></li>	
+			<%=image_tag first_image(r.images), class: "first-recipe-image" %>
+			<h6><%=r.summary %></h6><hr>
+		<% end %>
+		</ul>
+		<button><%= link_to("add recipe", new_recipe_path) %></button>
+	</div>
+			
 
-		
-<div class="index-cards">
-<h3>my groups</h3> 
-	<ul>
-	<% @groups.each do |group| %>
-	<li><%=link_to group.name, group_path(group)%></li>
-	</ul>
-	<% end %>
-<button>make a group</button>
-<button>join a group</button>
-</div>
+			
+	<div class="index-cards">
+		<h3> <%=link_to groups_path %></h3> 
+			<ul>
+			<% @groups.each do |group| %>
+			<li><%=link_to group.name, group_path(group)%></li>
+			</ul>
+			<% end %>
+		<button>make a group</button>
+		<button>join a group</button>
+
+
+	</div>
+<% end %>
 				

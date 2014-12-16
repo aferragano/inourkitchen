@@ -2,13 +2,11 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@recipes = Recipe.all 
+		public_group = Group.find_by(name: "public") 
+		@public_recipes = public_group.recipes
 		if current_user
 			@groups = User.find_by_id(session[:user_id]).groups
 			@user_recipes = User.find_by_id(session[:user_id]).recipes
-		else
-			@groups = Group.all
-			@user_recipes = Recipe.all
 		end		
 	end
  
