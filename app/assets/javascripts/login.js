@@ -9,5 +9,7 @@ $(document).ready(function() {
 	}
 	hideShow($('#login-btn'),$('.login-div'));
 	hideShow($('#sign-up-btn'),$('.sign-up-div'));
+	hideShow($('#user-btn'),$('.user-options'));
+
 
 });
