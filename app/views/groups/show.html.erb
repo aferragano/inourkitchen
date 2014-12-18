@@ -12,10 +12,10 @@
 	<h3>recipes</h3>
 	<ul>
 	<% @recipes.each do |r|%>
-	<hr>
 		<li><%=link_to r.title, recipe_path(r)%></li>
 		<%=image_tag first_image(r.images), class: "first-recipe-image" %>
 		<h4><%= r.summary%></h4>
+		<hr>
 	<% end %>
 	</ul>
 </div>
@@ -24,13 +24,14 @@
 
 <div class="index-cards" id="members">
 	<h3>group members</h3>
-	<hr>
 	<ul>
-	<% @g_users.each do |user|%>
-		<h4><%= link_to user.username, user_path %></h4>
+	<% @g_users.each do |user| %>
+		<h4> <%= link_to "#{user.username}", user_path %> </h4>
 		<%= image_tag first_image(user.images), class: "first-user-image" %>
-		<h6> <%=mail_to user.email, "email" %></h6>
+		<h6> <%= mail_to  user.email %> </h6>
+
 		<% end %>
+	<hr>
 	</ul>
 </div>
 
