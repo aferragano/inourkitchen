@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       session[:toggle] = true
-      redirect_to groups_path
+      redirect_to root_path
     else
       flash[:login] = "Invalid Credentials"
       redirect_to root_path
