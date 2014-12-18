@@ -20,7 +20,12 @@
 
 		<% if session[:user_id] %>
 		<li><button><%= link_to "groups", groups_path %></button></li>
-		<li><button><%=link_to "log out", '/logout', method: :delete %></button>
+		<li><button id="user-btn">me</button></li>
+		<div class="user-options">
+			<li><button><%=link_to "me!", user_path(session[:user_id])%></button>
+			<li><button><%=link_to "edit", edit_user_path(session[:user_id]) %></button>
+			<li><button><%=link_to "log out", '/logout', method: :delete %></button>
+		</div>
 		
 		<% else %>
 		<li><button id="login-btn">log in</button></li>
