@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 	def index
 		public_group = Group.find_by(name: "public") 
 		@public_recipes = public_group.recipes
-		if current_user
+		if  session[:user_id]
 			@groups = User.find_by_id(session[:user_id]).groups
 			@user_recipes = User.find_by_id(session[:user_id]).recipes
 		end		
