@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 		if  session[:user_id]
 			@groups = User.find_by_id(session[:user_id]).groups
 			@user_recipes = User.find_by_id(session[:user_id]).recipes
+			@tags = Tag.all
 		end		
 	end
  

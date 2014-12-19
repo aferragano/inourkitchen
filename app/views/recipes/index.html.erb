@@ -38,7 +38,14 @@
 			<% end %>
 		<button>make a group</button>
 		<button>join a group</button>
+	</div>
 
+	<div class="index-cards" id="tag-name">
+		<h3>tags</h3> 
+			
+			<% @tags.each do |tag| %>
+			<h5><%=link_to tag.name, tag_path(tag)%> </h5>
+			<% end %>
 
 	</div>
 <% end %>

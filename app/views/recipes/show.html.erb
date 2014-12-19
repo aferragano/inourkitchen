@@ -15,6 +15,12 @@
 	<% @images.each do |i| %>
 		<%= image_tag i.image_url, class: "recipe-image" %>
 	<% end %><br>
+	<div class="add-image">
+			<%=form_for [@imageable, @image] do |f| %>
+				<%= f.file_field :image_url %>
+				<%= f.submit "add image"%>
+			<% end %>
+		</div>
 
 
 	<div class="recipe-element">
@@ -52,13 +58,6 @@
 				<%=f.submit "add to a group" %>
 			<% end %>
 		</div><br>
-
-		<div class="add-image">
-			<%=form_for [@imageable, @image] do |f| %>
-				<%=f.file_field :image_url %><br>
-				<%= f.submit %>
-			<% end %>
-		</div>
 	</div>
 	
 
