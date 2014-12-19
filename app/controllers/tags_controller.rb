@@ -22,6 +22,7 @@ class TagsController < ApplicationController
 	end
 
 	def destroy
+		
 	end
 
 	private

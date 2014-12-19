@@ -14,6 +14,8 @@
 	<h4 id="summary"><%=@recipe.summary %></h4>
 	<% @images.each do |i| %>
 		<%= image_tag i.image_url, class: "recipe-image" %>
+		x <%= link_to "x", image_path(i.id), method: :delete %>
+		<%= i.id %>
 	<% end %><br>
 	<div class="add-image">
 			<%=form_for [@imageable, @image] do |f| %>

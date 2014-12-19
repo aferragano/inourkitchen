@@ -18,8 +18,17 @@ class ImagesController < ApplicationController
 		end
 	end
 
+	def destroy
+		p imageable 
+		p "*" * 90
+		@imageable.destroy
+		redirect_to request.referrer
+	end
+
 
 	private 
+
+
 
 	def image_params
 		params.require(:image).permit(:image_url)
@@ -28,8 +37,9 @@ class ImagesController < ApplicationController
 	def load_imageable
 		resource, id = request.path.split('/')[1, 2]
 		@imageable = resource.singularize.classify.constantize.find(id)
+		p "*" * 90
 		p @imageable 
-		p "****" * 20
+
 		@imageable
 	end
 
