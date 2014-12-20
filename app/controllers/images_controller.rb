@@ -20,8 +20,6 @@ class ImagesController < ApplicationController
 
 	def destroy
 		image = Image.find(image_params_id) 
-		p image 
-		p "*" * 90
 		image.destroy
 		redirect_to request.referrer
 	end
@@ -40,10 +38,6 @@ class ImagesController < ApplicationController
 	def load_imageable
 		resource, id = request.path.split('/')[1, 2]
 		@imageable = resource.singularize.classify.constantize.find(id)
-		p "*" * 90
-		p "ANTHONY"
-		p @imageable 
-
 		@imageable
 	end
 

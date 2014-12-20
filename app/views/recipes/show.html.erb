@@ -14,15 +14,18 @@
 	<h4 id="summary"><%=@recipe.summary %></h4>
 	<% @images.each do |i| %>
 		<%= image_tag i.image_url, class: "recipe-image" %>
-		x <%= link_to "x", image_path(i.id), method: :delete %>
-		<%= i.id %>
+			<% if @recipe.user.id = session.id %>
+			<%= link_to "x", image_path(i.id), method: :delete, class: "img-delete-btn" %>
+			<% end %>
 	<% end %><br>
+<% if @recipe.user.id = session.id %>
 	<div class="add-image">
-			<%=form_for [@imageable, @image] do |f| %>
+			<%= form_for [@imageable, @image] do |f| %>
 				<%= f.file_field :image_url %>
 				<%= f.submit "add image"%>
 			<% end %>
 		</div>
+<% end %>
 
 
 	<div class="recipe-element">
