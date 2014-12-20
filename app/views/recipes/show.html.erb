@@ -77,7 +77,7 @@
 			
 	<label>by: <%=link_to comment.user.first_name, user_path(comment.user) %>
 		<%= created_at(comment) %></label>
-			<%= image_tag first_image(comment.user.images), class: "first-user-image" %>
+			<%= image_tag last_image(comment.user.images), class: "first-user-image" %>
 			<% end %>
 		</div>
 	<%end%>
@@ -91,7 +91,7 @@
 			<p><%= story.content %></p>
 			<h6> <%= created_at(story) %></h6>
 			<%=link_to story.user.username, user_path(story.user) %>
-			<%=image_tag first_image(story.user.images), class: "first-user-image"%>
+			<%=image_tag last_image(story.user.images), class: "first-user-image"%>
 
 		</div>
 		<% end %>

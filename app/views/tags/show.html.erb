@@ -4,7 +4,7 @@
 <% @recipes.each do |recipe| %>
 
 	<%= link_to recipe.title, recipe_path(recipe) %>
-	<%= image_tag first_image(recipe.images), class: "first-recipe-image"%>
+	<%= image_tag last_image(recipe.images), class: "first-recipe-image"%>
 	<h5>by: <%=link_to recipe.user.username, user_path %></h5>
 	<hr>
 <% end %>
