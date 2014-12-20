@@ -43,6 +43,9 @@
 		<ul>
 			<% @tags.each do |tag| %>
 				<li><h6><%=link_to tag.name, tag_path(tag)%></h6></li>
+				<% if @recipe.user.id = session.id %>
+				<%= link_to "x", tag_path(tag.id), method: :delete, class: "tag-delete-btn" %>
+				<% end %>
 			<% end %>
 		</ul>
 		<%=form_for :recipe_tag, url:'/add_recipe_tag' do |f|%>
@@ -56,6 +59,9 @@
 			<ul>
 			<% @groups.each do |group| %>
 				<li><h6><%=link_to group.name, group_path(group)%></h6></li>
+				<% if @recipe.user.id = session.id %>
+				<%= link_to "x", group_path(group.id), method: :delete, class: "tag-delete-btn" %>
+				<% end %>
 			<% end %>
 			</ul>
 			<%=form_for :group_recipe, url:'/add_group_recipe' do |f|%>
