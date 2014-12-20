@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-	before_filter :load_imageable
+	before_filter :load_imageable, except: :destroy
 
 	def index 
 		@images = @imageable.images 
@@ -19,16 +19,19 @@ class ImagesController < ApplicationController
 	end
 
 	def destroy
-		p imageable 
+		image = Image.find(image_params_id) 
+		p image 
 		p "*" * 90
-		@imageable.destroy
+		image.destroy
 		redirect_to request.referrer
 	end
 
 
 	private 
 
-
+	def image_params_id
+		params.require(:id)
+	end
 
 	def image_params
 		params.require(:image).permit(:image_url)
@@ -38,6 +41,7 @@ class ImagesController < ApplicationController
 		resource, id = request.path.split('/')[1, 2]
 		@imageable = resource.singularize.classify.constantize.find(id)
 		p "*" * 90
+		p "ANTHONY"
 		p @imageable 
 
 		@imageable
