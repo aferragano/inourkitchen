@@ -1,4 +1,4 @@
-.img-delete-btn {
+.img-delete-btn, .tag-delete-btn {
 	text-decoration:none;
 	color: #A61900;
 	border: 1px solid #A61900;
@@ -7,7 +7,7 @@
 	vertical-align:bottom;
 
 }	
-.img-delete-btn:hover{
+.img-delete-btn:hover, .tag-delete-btn:hover{
 		color:white;
 		background-color: #A61900;
 }
