@@ -13,6 +13,7 @@ class TagsController < ApplicationController
 
 	def show
 		@recipes = @tag.recipes
+		
 	end
 
 	def edit
