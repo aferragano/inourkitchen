@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/add_user' => 'group_users#new'
   post '/add_user' => 'group_users#create'
  
+ resources :images, only: [:destroy]
 
   resources :recipes do
     resources :comments, only: [:new, :create, :destroy]

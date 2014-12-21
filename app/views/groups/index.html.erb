@@ -18,7 +18,7 @@
 		<% end %>
 		<% g.users.each do |user| %>
 			<h4><%=link_to user.username, user_path(user) %></h4>
-			<%= image_tag first_image(user.images), class: "first-user-image" %>
+			<%= image_tag last_image(user.images), class: "first-user-image" %>
 			<hr>
 		<%end %>
 	</div>

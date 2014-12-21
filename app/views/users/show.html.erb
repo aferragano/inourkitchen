@@ -1,7 +1,5 @@
 <div class="user">
-	<% @user_image.each do |image| %>
-		<%=image_tag image.image_url, class: "user-image" %>
-	<%end%>
+	<%= image_tag last_image(@user_image), class: "first-user-image" %>
 	<h6>username</h6>
 	<h2><%= @user.username %></h2>
 	<h6>name</h6>
