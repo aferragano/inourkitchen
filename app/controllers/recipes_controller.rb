@@ -2,6 +2,13 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def splash
+  	public_group = Group.find_by(name: "public")
+		@public_recipes = public_group.recipes.limit(5)
+		if  session[:user_id]
+			@groups = User.find_by_id(session[:user_id]).groups
+			@user_recipes = User.find_by_id(session[:user_id]).recipes
+			@tags = Tag.all
+		end		
   end
 
 	def index
