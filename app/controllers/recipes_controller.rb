@@ -1,9 +1,12 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
+  def splash
+  end
+
 	def index
-		public_group = Group.find_by(name: "public") 
-		@public_recipes = public_group.recipes
+		public_group = Group.find_by(name: "public")
+		@public_recipes = public_group.recipes.limit(5)
 		if  session[:user_id]
 			@groups = User.find_by_id(session[:user_id]).groups
 			@user_recipes = User.find_by_id(session[:user_id]).recipes
@@ -18,6 +21,7 @@ class RecipesController < ApplicationController
 	def create
 		@recipe = Recipe.create(recipe_params)
 		@user = User.find_by_id(session[:user_id])
+		recipe_ingred_tags(@recipe)
 		@user.recipes << @recipe 
 		if @recipe.save
 			redirect_to @recipe
@@ -25,6 +29,16 @@ class RecipesController < ApplicationController
 			render :new
 		end
 	end
+
+	def recipe_ingred_tags(recipe)
+		ingredients = recipe.ingredients.split(",")
+		p ingredients
+		ingredients.each do |ingredient|
+			p ingredient 
+			recipe.tags.find_or_create_by(name: ingredient)
+		end
+	end
+
 
 	def show
 		@r_comments = @recipe.comments
