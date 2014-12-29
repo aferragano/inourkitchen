@@ -101,7 +101,6 @@
 			<h6> <%= created_at(story) %></h6>
 			<%=link_to story.user.username, user_path(story.user) %>
 			<%=image_tag last_image(story.user.images), class: "first-user-image"%>
-
 		</div>
 		<% end %>
 	<div class="recipe-stories">
