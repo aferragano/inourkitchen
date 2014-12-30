@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
+  before_action :load_tagged, only: [:destroy]
 
 	def index
 	end
@@ -23,13 +24,19 @@ class TagsController < ApplicationController
 	end
 
 	def destroy
-		
+		@tag.recipe.find_by_id(@tagged)
 	end
 
 	private
 
 	def set_tag
 		@tag = Tag.find(params[:id])
+	end
+
+	def load_tagged
+		resource, id = request.path.split('/')[1, 2]
+		@tagged = resource.singularize.classify.constantize.find(id)
+		@tagged
 	end
 
 end
