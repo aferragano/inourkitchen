@@ -2,49 +2,31 @@ in the index page... will have search.. and limit it by 5-10 results
 that way it will be easier to maintain and produce search results.
 
 <div class="index-cards">
-	<h3>top public recipes</h3>
-	<ul>
+	<h3>public recipes</h3>
 		<% @public_recipes.each do |r| %>
-			<li><h4><%=link_to r.title, recipe_path(r)%></h4></li>
-			<%=image_tag last_image(r.images), class: "first-recipe-image" %>
-			<h6><%=r.summary %></h6><hr>
+			<div class="recipe-card">
+				<%=link_to r.title, recipe_path(r)%>
+				<%=image_tag last_image(r.images), class: "first-recipe-image" %>
+				<h6><%=r.summary %></h6>
+			</div>
 		<% end %>
-	</ul>
 </div>
 
 
 
 <% if session[:user_id] %>
+<h3>recipes</h3>
 	<div class="index-cards">
-		<h3>my recipes</h3>
-		<ul>
-		<% @user_recipes.each do |r| %>
-			<li><%=link_to r.title, recipe_path(r)%></li>	
-			<%=image_tag last_image(r.images), class: "first-recipe-image" %>
-			<h6><%=r.summary %></h6><hr>
+		<% @recipes[0].each do |r| %>
+			<div class="recipe-card">
+				<%=link_to r.title, recipe_path(r)%>
+				<%=image_tag last_image(r.images), class: "first-recipe-image" %>
+				<h6><%=r.summary %></h6>
+			</div>
+
 		<% end %>
 		</ul>
-		<button><%= link_to("add recipe", new_recipe_path) %></button>
-	</div>
-			
-
-			
-	<div class="index-cards">
-		<h3>my groups</h3> 
-			<ul>
-			<% @groups.each do |group| %>
-			<li><%=link_to group.name, group_path(group)%></li>
-			</ul>
-			<% end %>
 	</div>
 
-	<div class="index-cards" id="tag-name">
-		<h3>tags</h3> 
-			
-			<% @tags.each do |tag| %>
-			<h5><%=link_to tag.name, tag_path(tag)%> </h5>
-			<% end %>
-
-	</div>
 <% end %>
 				

@@ -19,6 +19,7 @@
 		
 
 		<% if session[:user_id] %>
+		<li><button><%= link_to "recipes", recipes_path %></button></li>
 		<li><button><%= link_to "groups", groups_path %></button></li>
 		<li><button id="user-btn">me</button></li>
 		<div class="user-options">
