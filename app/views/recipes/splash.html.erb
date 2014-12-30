@@ -1,51 +1,41 @@
 <h3>top public recipes</h3>
 <div class="index-cards">
-	
-
 		<% @public_recipes.each do |r| %>
-		<div class="recipe-card">
-			<h4><%= link_to r.title, recipe_path(r)%></h4>
-			<%= image_tag last_image(r.images), class: "first-recipe-image" %>
-			<h6><%= r.summary %></h6>
-		</div>
+			<div class="recipe-card">
+				<h4><%= link_to r.title, recipe_path(r)%></h4>
+				<%= image_tag last_image(r.images), class: "first-recipe-image" %>
+				<h6><%= r.summary %></h6>
+			</div>
 		<% end %>
-
 </div>
-
 
 
 <% if session[:user_id] %>
 	<h3>my recipes</h3>
 	<div class="index-cards">
-
-		
 		<% @user_recipes.each do |r| %>
-		<div class="recipe-card">
-			<%=link_to r.title, recipe_path(r)%>
-			<%=image_tag last_image(r.images), class: "first-recipe-image" %>
-			<h6><%=r.summary %></h6>
+			<div class="recipe-card">
+				<%=link_to r.title, recipe_path(r)%>
+				<%=image_tag last_image(r.images), class: "first-recipe-image" %>
+				<h6><%=r.summary %></h6>
 			</div>
 		<% end %>
 	</div>
 			
 	<div class="index-cards"  id="tag-name">
 		<h3>my groups</h3>
-	
 			<ul>
-			<% @groups.each do |group| %>
-			<li><%=link_to group.name, group_path(group)%></li>
-			</ul>
+				<% @groups.each do |group| %>
+					<li><%=link_to group.name, group_path(group)%></li>
+				</ul>
 			<% end %>
 	</div>
 
 	<div class="index-cards" id="tag-name">
 		<h3>tags</h3>
-		
-			
 			<% @tags.each do |tag| %>
-			<h5><%=link_to tag.name, tag_path(tag)%> </h5>
+				<h5><%=link_to tag.name, tag_path(tag)%> </h5>
 			<% end %>
-
 	</div>
 <% end %>
 				

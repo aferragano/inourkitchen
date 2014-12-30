@@ -5,9 +5,9 @@ class RecipesController < ApplicationController
   	public_group = Group.find_by(name: "public")
 		@public_recipes = public_group.recipes.limit(5)
 		if  session[:user_id]
-			@groups = User.find_by_id(session[:user_id]).groups
+			@groups = User.find_by_id(session[:user_id]).groups.sort_by{ |e| e.name.downcase }
 			@user_recipes = User.find_by_id(session[:user_id]).recipes
-			@tags = Tag.all
+			@tags = Tag.all.sort_by{ |e| e.name.downcase }
 		end		
   end
 
