@@ -1,9 +1,7 @@
 class RecipeTagsController < ApplicationController
 	before_filter :load_recipe
 	before_filter :load_recipe_tag, only: :destroy
-
-	# before_filter :load_tag, only: :destroy
-
+	
 	def index
 	end
 

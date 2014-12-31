@@ -5,7 +5,6 @@ class RecipeStoriesController < ApplicationController
 	end
 
 	def new
-		# @new_user = @group_id.users.new
 		@recipe_story = @recipe.stories.new
 	end
 
