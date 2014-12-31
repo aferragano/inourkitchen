@@ -10,7 +10,7 @@ class RecipeTagsController < ApplicationController
 	end
 
 	def create
-		tag = Tag.create(recipe_tags_params)
+		tag = Tag.find_or_create_by(recipe_tags_params)
 		@recipe.tags << tag
 		if @recipe.save
 			redirect_to request.referrer
