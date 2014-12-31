@@ -9,7 +9,7 @@
 			<p><%=@recipe.serve_size%></p>
 			| <h5>time:</h5> 
 			<p><%=@recipe.time%></p>
-	</div>
+	</div> 
 		
 	<h4 id="summary"><%=@recipe.summary %></h4>
 	<% @images.each do |i| %>
@@ -34,7 +34,7 @@
 	</div>
 
 	<div class="recipe-element" id="directions">
-		<h5>directions:</h5>
+		<h5>directions: </h5>
 		<p><%= @recipe.directions %></p>
 	</div><br>
 
@@ -44,7 +44,7 @@
 			<% @tags.each do |tag| %>
 				<li><h6><%=link_to tag.name, tag_path(tag)%></h6></li>
 				<% if @recipe.user.id = session.id %>
-				<%= link_to "x", tag_path(tag.id), method: :delete, class: "tag-delete-btn" %>
+				<%= link_to "x", recipe_tag_path(tag.id), method: :delete, class: "tag-delete-btn" %>
 				<% end %>
 			<% end %>
 		</ul>
@@ -101,7 +101,6 @@
 			<h6> <%= created_at(story) %></h6>
 			<%=link_to story.user.username, user_path(story.user) %>
 			<%=image_tag last_image(story.user.images), class: "first-user-image"%>
-
 		</div>
 		<% end %>
 	<div class="recipe-stories">

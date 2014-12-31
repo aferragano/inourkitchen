@@ -7,6 +7,7 @@
 		<p>recipe summary</p>
 		<%= f.text_area :summary, placeholder: "please provide a brief summary of this recipe" %><br>
 		<p>ingredients list:</p>
+		<h6>please sepparate each ingredient with a comma</h6>
 		<%= f.text_area :ingredients, placeholder:"list all ingredients", class: "recipe-ingredients" %><br>
 		<p> step-by-step directions</p>
 		<%= f.text_area :directions, placeholder:"please provide step-by-step instructions", class: "recipe-directions" %><br>

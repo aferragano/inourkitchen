@@ -1,11 +1,19 @@
 #tag-name {
+	text-wrap:normal;
+	white-space: normal;
+	padding:8px;
+	width:38%;
+	float:center;
 	display:inline-block;
+	margin:10px 4% 10px 4%;
+
 	h5 {
 	padding:3px;
-	margin:2px;
+	margin:10px;
 	border: 1px solid #A61900;
+	display:inline;
 	width:auto;
-	display:inline-block;
 	border-radius:5px;
+	line-height: 250%;
 	}
 }

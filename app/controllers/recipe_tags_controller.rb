@@ -1,6 +1,7 @@
 class RecipeTagsController < ApplicationController
-	before_filter :load_recipe 
-
+	before_filter :load_recipe
+	before_filter :load_recipe_tag, only: :destroy
+	
 	def index
 	end
 
@@ -20,6 +21,8 @@ class RecipeTagsController < ApplicationController
 	end
 
 	def destroy
+		@recipe_tag.delete
+		redirect_to request.referrer
 	end
 
 	private 
@@ -31,6 +34,10 @@ class RecipeTagsController < ApplicationController
 	def load_recipe 
 		resource, id = request.referrer.split('/')[3, 4]
 		@recipe = Recipe.find(id)
+	end
+
+	def load_recipe_tag
+		@recipe_tag = RecipeTag.find(params[:id])
 	end
 
 end
