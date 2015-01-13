@@ -21,6 +21,10 @@ class RecipeTagsController < ApplicationController
 	end
 
 	def destroy
+		#need to edit this code so that delete only deletes the asscociation
+		p"&" * 100
+		p @recipe.tags
+		p "boop"
 		@recipe_tag.delete
 		redirect_to request.referrer
 	end
