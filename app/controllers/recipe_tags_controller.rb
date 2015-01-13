@@ -10,7 +10,7 @@ class RecipeTagsController < ApplicationController
 	end
 
 	def create
-		tag = Tag.create(recipe_tags_params)
+		tag = Tag.find_or_create_by(recipe_tags_params)
 		@recipe.tags << tag
 		if @recipe.save
 			redirect_to request.referrer
@@ -21,6 +21,10 @@ class RecipeTagsController < ApplicationController
 	end
 
 	def destroy
+		#need to edit this code so that delete only deletes the asscociation
+		p"&" * 100
+		p @recipe.tags
+		p "boop"
 		@recipe_tag.delete
 		redirect_to request.referrer
 	end
