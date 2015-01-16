@@ -10,7 +10,7 @@
 	margin:20px auto 20px auto;
 	padding:20px;
 	background-color:white;
-	border: 1px solid #A61900;
+	border: 1px solid #CC5522;
 	border-radius:15px;
 	padding:20px;
 	display:block;
@@ -29,7 +29,7 @@
 
 		position:inline-block;
 		float:right;
-		background-color:#A61900;
+		background-color:#CC5522;
 		color:white;
 		border:none;
 		border-radius:5px;
@@ -53,11 +53,28 @@
 			}
 }
 .first-user-image {
-				width:60px;
-				float:right;
-				margin-right:2px;
-				bottom:-5px;
-				margin-bottom:0px;
-				border-radius:60px;
-
-			}
+	width:60px;
+	float:center;
+	margin-right:2px;
+	bottom:-5px;
+	margin-bottom:0px;
+	border-radius:60px;
+}
+#add-member {
+	text-align:center;
+	margin:1px;
+}
+.group-user-card {
+	width:70%;
+	margin:20px auto 40px auto;
+	text-align:center;
+	input {
+		padding:14px;
+		margin:5px;
+		border-radius:6px;
+		border:none;
+		background-color:white;
+		color: #6A785F;
+		vertical-align:text-center;
+	}
+}

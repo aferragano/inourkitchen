@@ -1,25 +1,23 @@
- 
-<h1>GROUPS</h1>
- 
 
-<div class="index-cards">
+<div class="index-cards" id="new-group">
 	create a new group
 	<%=form_for @group, :url => groups_path do |f|%>
-		<%=f.text_field :name, placeholder: "new group name" %>
+	<div class="recipe-card">
+		<%=f.text_field :name, placeholder: "new group name" %><br>
 		<%=f.submit%>
 	<%end%>
+</div>
 </div>
 
 <% @groups.each do |g|%>
 	<div class="index-cards">
-		<h3><%= link_to g.name, group_path(g)%></h3>
-		<% g.recipes do |r| %>
-			<%=r.title%>
+		<h2><%= link_to g.name, group_path(g)%></h2>
+			<% g.recipes do |r| %>
+			<%=r.title%><br>
 		<% end %>
 		<% g.users.each do |user| %>
-			<h4><%=link_to user.username, user_path(user) %></h4>
-			<%= image_tag last_image(user.images), class: "first-user-image" %>
-			<hr>
+			<h4><%=link_to user.username, user_path(user) %></h4><br>
+			<%= image_tag last_image(user.images), class: "first-user-image" %><br>
 		<%end %>
 	</div>
 <%end%>

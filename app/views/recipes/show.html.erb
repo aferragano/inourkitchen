@@ -1,41 +1,64 @@
 <div id="recipe-container">
 
 	<div class="display-recipe">
-		<div id="title">
-		<h2 id="title"><%=@recipe.title %></h2>
-			<button><%= link_to "edit", edit_recipe_path(@recipe) %></button>
-
-		<h5>serves:</h5> 
-			<p><%=@recipe.serve_size%></p>
-			| <h5>time:</h5> 
-			<p><%=@recipe.time%></p>
-	</div> 
-		
-	<h4 id="summary"><%=@recipe.summary %></h4>
-	<% @images.each do |i| %>
-		<%= image_tag i.image_url, class: "recipe-image" %>
-			<% if @recipe.user.id = session.id %>
-			<%= link_to "x", image_path(i.id), method: :delete, class: "img-delete-btn" %>
+		<div >
+			<h2 id="title"><%=@recipe.title %></h2>
+			<% if @recipe.user.id == session[:user_id] %>
+				<button><%= link_to "edit", edit_recipe_path(@recipe) %></button>
 			<% end %>
-	<% end %><br>
-<% if @recipe.user.id = session.id %>
-	<div class="add-image">
+				<button id="comment-recipe-btn">comments</button>
+				<button id="stories-recipe-btn">stories</button>
+			<h5 >serves:</h5> 
+				<p ><%=@recipe.serve_size%></p>
+				| <h5>time:</h5> 
+				<p><%=@recipe.time%></p>
+		</div> <br>
+		
+		<h4 id="summary"><%=@recipe.summary %></h4>
+		<% @images.each do |i| %>
+		<%= image_tag i.image_url, class: "recipe-image" %>
+			<% if @recipe.user.id == session[:user_id] %>
+				<%= link_to "x", image_path(i.id), method: :delete, class: "img-delete-btn" %>
+			<% end %>
+		<% end %><br>
+
+	<div class="comment">
+		<h6>comment</h6>
+		<%= form_for [@commentable, @comment] do |f| %>
+			<%= f.text_area :content %><br>
+			<%= f.submit "post comment" %>
+			<% end %>
+	</div> 
+
+	<% @r_comments.each do |comment| %>
+	<div class="comment">
+		<h6><%= comment.content %></h6>
+		<% if comment.user %>
+		<label>by: <%=link_to comment.user.first_name, user_path(comment.user) %>
+		<%= created_at(comment) %></label>
+			<%= image_tag last_image(comment.user.images), class: "first-user-image" %>
+			<% end %>
+		</div>
+	<%end%>
+
+		<% if @recipe.user.id == session[:user_id] %>
+			<div class="add-image">
 			<%= form_for [@imageable, @image] do |f| %>
 				<%= f.file_field :image_url %>
 				<%= f.submit "add image"%>
 			<% end %>
 		</div>
-<% end %>
+		<% end %>
 
 
-	<div class="recipe-element">
+	<div class="recipe-element" id="ingredients">
 		<h5>ingredients:</h5><br>
-		<p><%=@recipe.ingredients%></p>	
+		<p><%=@recipe.ingredients.gsub("\n", "<br>").html_safe %></p>	
 	</div>
 
 	<div class="recipe-element" id="directions">
 		<h5>directions: </h5>
-		<p><%= @recipe.directions %></p>
+		<p><%= h(@recipe.directions).gsub("\n", "<br>").html_safe %></p>
 	</div><br>
 
 	<div class="recipe-tags">	
@@ -43,14 +66,14 @@
 		<ul>
 			<% @tags.each do |tag| %>
 				<li><h6><%=link_to tag.name, tag_path(tag)%></h6></li>
-				<% if @recipe.user.id = session.id %>
+				<% if @recipe.user.id == session.id %>
 				<%= link_to "x", recipe_tag_path(tag.id), method: :delete, class: "tag-delete-btn" %>
 				<% end %>
 			<% end %>
 		</ul>
 		<%=form_for :recipe_tag, url:'/add_recipe_tag' do |f|%>
 			<%=f.text_field :name, placeholder: "recipe tag" %>
-			<%=f.submit "add a tag" %>
+			<%=f.submit "+" %>
 		<% end %>
 	</div><br>
 
@@ -83,8 +106,7 @@
 	<div class="comment">
 		<h6><%= comment.content %></h6>
 		<% if comment.user %>
-			
-	<label>by: <%=link_to comment.user.first_name, user_path(comment.user) %>
+		<label>by: <%=link_to comment.user.first_name, user_path(comment.user) %>
 		<%= created_at(comment) %></label>
 			<%= image_tag last_image(comment.user.images), class: "first-user-image" %>
 			<% end %>
@@ -92,9 +114,9 @@
 	<%end%>
 
 	
-		<h3>stories:</h3>
 		
 		<% @stories.each do |story| %>
+		<h3>stories:</h3>
 		<div class="recipe-stories">
 			<h4><%= link_to story.title, story_path(story) %></h4>
 			<p><%= story.content %></p>

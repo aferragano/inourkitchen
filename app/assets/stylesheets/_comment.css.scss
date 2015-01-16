@@ -1,7 +1,7 @@
 .comment {
 	background-color:white;
-	border: 1px solid #AD9F97;
-	color: #AD9F97;
+	border: 1px solid #CC5522;
+	color: #CC5522;
 	width: 200px;
 	height:120px;
 	display:inline-block;
@@ -9,6 +9,7 @@
 	border-radius:5px;
 	margin: 5px 5px 0px 0px;
 	overflow: scroll;
+	float:left;
 
 	h6 {
 		text-align:left;
@@ -19,7 +20,8 @@
 		text-align: right;
 		display:block;
 		position:relative;
-		left:-5px;
+		
+		vertical-align:img-bottom;
 		bottom:-60px;
 	}
 	textarea {
@@ -33,16 +35,13 @@
 	input {
 		float:right;
 		background-color:white;
-		color:#A61900;
+		color:#CC5522;
 		border-radius:5px;
 		border:none;
-		margin: 0px 5px 0px 0px;
+		margin: 0px 0px 0px 0px;
 	}
 	a, a:visited {
-		color:#A61900;
+		color:#CC5522;
 		text-decoration:none;
 	}
-
-
-
 }

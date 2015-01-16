@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 	def edit
 		@imageable = @user
 		@image = Image.new
+		@images = @user.images
 	end
 
 	def update
