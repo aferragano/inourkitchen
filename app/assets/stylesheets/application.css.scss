@@ -55,16 +55,19 @@ nav {
 	padding-right:2px;
 
 }
-.login-div, .sign-up-div{
+.login-div, .sign-up-div, .user-options{
 	display:block;
 	width:30%;
 	font-size:.8em;
 	color: #CC5522;
 	background-color:white;
 	border-radius:5px;
-	border: 1px solid #CC5522;
+	border: 0px solid #CC5522;
 	text-align:center;
 	padding:10px;
+
+	display:inline;
+	float:right;
 	margin:0px auto 0px auto;
 	input{
 		margin:5px;
@@ -74,5 +77,11 @@ nav {
 		text-align:center;
 		border-radius:5px;
 	}
-
+}
+.user-options{
+	padding:5px;
+	margin:2px;
+	input{
+		margin:0px;
+	}
 }
