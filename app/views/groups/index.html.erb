@@ -1,9 +1,9 @@
 
-<div class="index-cards">
+<div class="index-cards" id="new-group">
 	create a new group
 	<%=form_for @group, :url => groups_path do |f|%>
 	<div class="recipe-card">
-		<%=f.text_field :name, placeholder: "new group name" %>
+		<%=f.text_field :name, placeholder: "new group name" %><br>
 		<%=f.submit%>
 	<%end%>
 </div>

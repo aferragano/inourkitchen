@@ -1,15 +1,27 @@
+<div class="group-user-card ">
 <%= form_for @user do |f| %>
-	<%= f.text_field :first_name, placeholder: "first name" %><br>
-	<%= f.text_field :last_name, placeholder: "last name" %><br>
-	<%= f.text_field :username, placeholder: "username" %><br>
+	<%=f.label "first name"%>
+	<%= f.text_field :first_name, placeholder: "first name" %>
+	<br><%=f.label "last name"%>
+	<%= f.text_field :last_name, placeholder: "last name" %>
+	<br>
+	<%=f.label "Username"%>
+	<%= f.text_field :username, placeholder: "username" %>
+	<br><%=f.label "email"%>
 	<%= f.text_field :email, placeholder: "email" %><br>
+	<%=f.label "Change Password"%>
 	<%= f.password_field :password, placeholder: "password" %><br>
 	<%= f.submit %>
 <% end %>
+	<% @images.each do |img| %>
+		<%= image_tag img.image_url, class: "first-user-image" %>
+	<% end %>
 
 	<div class="add-image">
 		<%=form_for [@imageable, @image] do |f| %>
 			<%=f.file_field :image_url %>
 			<%= f.submit %>
 		<% end %>
-	</div>	
+	</div>
+
+</div>

@@ -63,5 +63,18 @@
 #add-member {
 	text-align:center;
 	margin:1px;
-
+}
+.group-user-card {
+	width:70%;
+	margin:20px auto 40px auto;
+	text-align:center;
+	input {
+		padding:14px;
+		margin:5px;
+		border-radius:6px;
+		border:none;
+		background-color:white;
+		color: #6A785F;
+		vertical-align:text-center;
+	}
 }

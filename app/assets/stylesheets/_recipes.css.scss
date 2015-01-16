@@ -108,8 +108,8 @@ h3 {
 			color: #CC5522;
 			background-color:white;
 			border-radius:5px;
-			margin-right:10px;
-			margin-bottom:15px;
+
+			margin: 3px 10px 15px 0px;
 
 			a {
 				color:  #CC5522;
@@ -117,42 +117,45 @@ h3 {
 			}
 		}
 		.recipe-image {
-				margin-left:auto;
-				margin-right:auto;
-				height: 100px;
+				margin:20px auto 5px auto;
+				height: 180px;
+				text-align:center;
 				border-radius:15px;
-				padding: 8px;
-			}
-			.recipe-element {
-				float:left;
-				width:23%;
-				border: 1px solid #CC5522;
-				border-radius:5px;
-				margin:4px;
-				margin-bottom:20px;
+				padding: 4px;
+				display: inline-block;
+				overflow: scroll;
+				
+				}
+		.recipe-element {
+			float:left;
+			width:23%;
+			border: 1px solid #CC5522;
+			border-radius:5px;
+			margin:4px;
+			margin-bottom:20px;
 
-				h5{
-					background-color:#CC5522;
-					width:100%;
-					margin:0px;
-					margin-top:0px;
-					padding:5px 0px 5px 0px;
-					color:white;
-					text-align:center;
-					border-radius:2px;
-				}
+		h5{
+			background-color:#CC5522;
+			width:100%;
+			margin:0px;
+			margin-top:0px;
+			padding:5px 0px 5px 0px;
+			color:white;
+			text-align:center;
+			border-radius:2px;
 			}
-			#directions{
-				width:69%;
-				float:right;
-				position:relative;
-				h5 {
-					width:100%;
-					margin:0px;
-					padding:5px 0px 5px 0px;
-					border-radius:2px;
-				}
+		}
+		#directions{
+			width:69%;
+			float:right;
+			position:relative;
+			h5 {
+				width:100%;
+				margin:0px;
+				padding:5px 0px 5px 0px;
+				border-radius:2px;
 			}
+		}
 	}
 
 	.recipe-tags, .recipe-groups {

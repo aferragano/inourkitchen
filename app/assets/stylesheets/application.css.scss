@@ -56,14 +56,23 @@ nav {
 
 }
 .login-div, .sign-up-div{
+	display:block;
+	width:30%;
 	font-size:.8em;
 	color: #CC5522;
 	background-color:white;
 	border-radius:5px;
-	border: 3px solid #CC5522;
-	float:right;
+	border: 1px solid #CC5522;
 	text-align:center;
 	padding:10px;
-	margin:5px 0px 10px 0px;
+	margin:0px auto 0px auto;
+	input{
+		margin:5px;
+		border:none;
+		border: 1px solid #CC5522;
+		background-color:white;
+		text-align:center;
+		border-radius:5px;
+	}
 
 }
