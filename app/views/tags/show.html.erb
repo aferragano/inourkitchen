@@ -1,10 +1,10 @@
-<h2><%=@tag.name %></h2>
+<h3><%=@tag.name %></h3>
 
 <div class="index-cards">
 <% @recipes.each do |recipe| %>
 	<div class="recipe-card">
 	<%= link_to recipe.title, recipe_path(recipe) %>
-	<br><h7>by: <%=link_to recipe.user.username, user_path %></h7>
+	<br><h7>by: <%=link_to recipe.user.username, user_path %></h7><br>
 	<%= image_tag last_image(recipe.images), class: "first-recipe-image"%>
 	<h6><%=recipe.summary %></h6>
 	</div>

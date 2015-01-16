@@ -1,36 +1,35 @@
-	<h1> <%=@group.name%></h1>	
+	<h3> <%=@group.name%></h3>	
 
-
+<h3>recipes</h3>
 <div class="index-cards">
-	<h3>recipes</h3>
-	<ul>
+	
+
 	<% @recipes.each do |r|%>
-		<li><%=link_to r.title, recipe_path(r)%></li>
+		<div class="recipe-card">
+		<h4><%=link_to r.title, recipe_path(r)%><h4>
 		<%=image_tag last_image(r.images), class: "first-recipe-image" %>
-		<h4><%= r.summary%></h4>
-		<hr>
-	<% end %>
-	</ul>
+		<h6><%= r.summary%></h6>
+		</div>
+		<% end %>
 </div>
 
 
-
-<div class="index-cards" id="members">
-	<h3>group members</h3>
-	<ul>
-	<% @g_users.each do |user| %>
-		<h4> <%= link_to "#{user.username}", user_path %> </h4>
-		<%= image_tag last_image(user.images), class: "first-user-image" %>
-		<h6> <%= mail_to  user.email %> </h6>
-
-		<% end %>
-	<hr>
-	</ul>
-	<h5>add a user to this group</h5>
-		<%=form_for :group_user, url:'/add_user' do |f| %>
+<h3>group members</h3>
+<div id="add-member">
+	<%=form_for :group_user, url:'/add_user' do |f| %>
 		<%= f.text_field :email, placeholder: "email" %>
 		<%= f.submit "add user" %>
 	<% end %>
+</div>
+<div class="index-cards" id="members">
+	<% @g_users.each do |user| %>
+	<div class="recipe-card">
+		<h4> <%= link_to "#{user.username}", user_path %> </h4><br>
+		<%= image_tag last_image(user.images), class: "first-user-image" %>
+		<h6> <%= mail_to  user.email %> </h6>
+		</div>
+		<% end %>
+	</div>
 </div>
 
 
