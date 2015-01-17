@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :comments, only: [:new, :create, :destroy]
     resources :images, only: [:new, :create, :destroy]
+    collection { post :search, to: 'recipes#index' }
   end
 
   resources :tags, only: [:show]
