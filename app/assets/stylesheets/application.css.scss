@@ -87,7 +87,7 @@ nav {
 		padding:0px;
 	}
 }
-footer {
+footer, #hints {
 	height:60px;
 	background-color:white;
 	color:#6A785F;
@@ -105,5 +105,7 @@ footer {
 	button {
 		color:#6A785F;
 	}
-
+	p {
+		text-align:center;
+	}
 }
