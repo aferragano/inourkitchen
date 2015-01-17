@@ -87,7 +87,7 @@ nav {
 		padding:0px;
 	}
 }
-footer, #hints {
+footer, #hints,#about,#careers {
 	height:60px;
 	background-color:white;
 	color:#6A785F;
@@ -107,5 +107,11 @@ footer, #hints {
 	}
 	p {
 		text-align:center;
+	}
+}
+#hints,#about,#careers {
+	height:auto;
+	h3{
+		display:inline-block;
 	}
 }
