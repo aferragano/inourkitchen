@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'cloudinary'
 gem 'aws-sdk-v1'
 gem 'aws-sdk', '2.0.6.pre'
 gem 'rails_12factor', group: :production
