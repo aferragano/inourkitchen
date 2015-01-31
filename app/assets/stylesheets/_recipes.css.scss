@@ -69,6 +69,7 @@ h3 {
 			margin: 15px 0px 18px 0px;
 			border-radius:15px;
 			padding-bottom:26px;
+			@include span-columns(10);
 		#title{
 			background-color:#CC5522;
 			color:white;
@@ -129,7 +130,7 @@ h3 {
 				}
 		.recipe-element {
 			float:left;
-			width:23%;
+			@include span-columns(3);
 			border: 1px solid #CC5522;
 			border-radius:5px;
 			margin:4px;
@@ -150,7 +151,7 @@ h3 {
 			float:left;
 		}
 		#directions{
-			width:69%;
+			@include span-columns(6);
 			float:right;
 			position:relative;
 			h5 {
@@ -164,7 +165,7 @@ h3 {
 
 	.recipe-tags, .recipe-groups {
 		color: #CC5522;
-		width:23%;
+		@include span-columns(4);
 		bottom:-10px;
 		h5,ul{
 			display:block;
@@ -192,7 +193,7 @@ h3 {
 		input, button{
 			float:left;
 			height:20px;
-			width:100%;
+			@include span-columns(5);
 			background-color:white;
 			border: 1px solid #A0B590;
 			color: #A0B590;

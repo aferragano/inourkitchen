@@ -9,7 +9,7 @@ $(document).ready(function() {
 	}
 	hideShow($('#title'),$('#summary'));
 	hideShow($('#comment-recipe-btn'),$('.comment'));
-	hideShow($('#stories-recipe-btn'),$(''));
+	hideShow($('#stories-recipe-btn'),$('.story-tab'));
 	hideShow($('#hints-btn'),$('#hints'));
 	hideShow($('#about-btn'),$('#about'));
 	hideShow($('#careers-btn'),$('#careers'));

@@ -2,7 +2,7 @@
 	background-color:white;
 	border: 1px solid #CC5522;
 	color: #CC5522;
-	width: 200px;
+	@include span-columns(5);
 	height:120px;
 	display:inline-block;
 	vertical-align:text-top;

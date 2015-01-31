@@ -1,4 +1,6 @@
 @import "bourbon";
+@import "neat";
+@import "grid-settings";
 @import 'groups';
 @import 'recipes';
 @import 'new_recipe';
@@ -20,6 +22,10 @@ body, ul, h1{
 	padding:0px;
 	margin:0px;
 }
+div.container {
+	@include outer-container;
+}
+
 nav {
 	background-color:white;
 	width: 100%;

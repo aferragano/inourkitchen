@@ -23,6 +23,16 @@
 			<% end %>
 		<% end %><br>
 
+<% if @recipe.user.id == session[:user_id] %>
+		<div class="add-image">
+		<%= form_for [@imageable, @image] do |f| %>
+			<%= f.file_field :image_url %>
+			<%= f.submit "add image"%>
+			<%= hidden_field_tag :direct, params[:direct] %>
+		<% end %>
+	</div>
+	<% end %>
+
 	<div class="comment">
 		<h6>comment</h6>
 		<%= form_for [@commentable, @comment] do |f| %>
@@ -30,6 +40,8 @@
 			<%= f.submit "post comment" %>
 			<% end %>
 	</div> 
+
+	
 
 	<% @r_comments.each do |comment| %>
 	<div class="comment">
@@ -43,15 +55,28 @@
 		</div>
 	<%end%>
 
-		<% if @recipe.user.id == session[:user_id] %>
-			<div class="add-image">
-			<%= form_for [@imageable, @image] do |f| %>
-				<%= f.file_field :image_url %>
-				<%= f.submit "add image"%>
-				<%= hidden_field_tag :direct, params[:direct] %>
-			<% end %>
+
+
+		<div class="story-tab">
+		<% @stories.each do |story| %>
+				<h3>stories:</h3>
+				<div class="recipe-stories">
+					<h3><%= story.title %></h3>
+					<p><%= story.content %></p>
+					<h6> <%= created_at(story) %></h6>
+					<%=link_to story.user.username, user_path(story.user) %>
+					<%=image_tag last_image(story.user.images), class: "first-user-image"%>
+				</div>
+				<% end %>
+			<div class="recipe-stories">
+				<h3>add a story</h3>
+					<%=form_for :recipe_story, url:'/add_recipe_story' do |f|%>
+					<h3><%=f.text_field :title, placeholder: "story title" %></h3>
+					<%=f.text_area :content, placeholder: "story" %><br>
+					<%=f.submit "add story" %>
+				<% end %>
+			</div>
 		</div>
-		<% end %>
 
 
 	<div class="recipe-element" id="ingredients">
@@ -97,45 +122,3 @@
 		</div><br>
 	</div>
 	
-
-	<div class="comment">
-		<h6>comment</h6>
-		<%= form_for [@commentable, @comment] do |f| %>
-			<%= f.text_area :content %><br>
-			<%= f.submit "post comment" %>
-			<% end %>
-	</div> 
-	<% @r_comments.each do |comment| %>
-	<div class="comment">
-		<h6><%= comment.content %></h6>
-		<% if comment.user %>
-		<label>by: <%=link_to comment.user.first_name, user_path(comment.user) %>
-		<%= created_at(comment) %></label>
-			<%= image_tag last_image(comment.user.images), class: "first-user-image" %>
-			<% end %>
-		</div>
-	<%end%>
-
-	
-		
-		<% @stories.each do |story| %>
-		<h3>stories:</h3>
-		<div class="recipe-stories">
-			<h4><%= link_to story.title, story_path(story) %></h4>
-			<p><%= story.content %></p>
-			<h6> <%= created_at(story) %></h6>
-			<%=link_to story.user.username, user_path(story.user) %>
-			<%=image_tag last_image(story.user.images), class: "first-user-image"%>
-		</div>
-		<% end %>
-	<div class="recipe-stories">
-		<h4>add a story</h4>
-			<%=form_for :recipe_story, url:'/add_recipe_story' do |f|%>
-			<h3><%=f.text_field :title, placeholder: "story title" %></h3>
-			<%=f.text_area :content, placeholder: "story" %><br>
-			<%=f.submit "add story" %>
-		<% end %>
-	</div>
-</div>
- 
-
