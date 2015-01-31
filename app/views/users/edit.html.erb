@@ -14,7 +14,7 @@
 	<%= f.submit %>
 <% end %>
 	<% @images.each do |img| %>
-		<%= image_tag img.image_url, class: "first-user-image" %>
+		<%= image_tag img.image_url.url, class: "first-user-image" %>
 	<% end %>
 
 	<div class="add-image">

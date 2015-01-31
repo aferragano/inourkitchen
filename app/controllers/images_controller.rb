@@ -27,14 +27,8 @@ class ImagesController < ApplicationController
 
 	def create
 		@image = @imageable.images.create(image_params)
-		p "* " * 100
-
-		p @image 
-
 		if @image.save 
 			redirect_to request.referrer, notice: "image added"
-			# @image.update_attributes(:bytes => @image.image_url.metadata['bytes'])
-      # Show upload metadata in the view
       @upload = @image.image_url.metadata
 		else
 			render :new
