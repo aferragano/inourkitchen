@@ -25,9 +25,9 @@
 	<div class="index-cards"  id="tag-name">
 		<h3>my groups</h3>
 			<ul>
-				<% @groups.each do |group| %>
-					<li><%=link_to group.name, group_path(group)%></li>
-				</ul>
+			<% @groups.each do |group| %>
+				<li><%=link_to group.name, group_path(group)%></li>
+			</ul>
 			<% end %>
 	</div>
 

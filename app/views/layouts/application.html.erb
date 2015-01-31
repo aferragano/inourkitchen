@@ -12,38 +12,30 @@
 	<nav>
 		<ul>
 		<li><img src="/iok_logo.png" alt="iok logo" class="logo"><br><%= link_to "in our kitchen", root_path %></li>
-
-
-
 		<div class="options">
-		<li><button><%= link_to "add recipe", new_recipe_path %></button></li>
-		
-
-		<% if session[:user_id] %>
-		<li><button><%= link_to "recipes", recipes_path %></button></li>
-		<li><button><%= link_to "groups", groups_path %></button></li>
-		<li><button id="user-btn">me</button></li>
-		<div class="user-options">
-			<li><button><%=link_to "me!", user_path(session[:user_id])%></button>
-			<li><button><%=link_to "edit", edit_user_path(session[:user_id]) %></button>
-			<li><button><%=link_to "log out", '/logout', method: :delete %></button>
-		</div>
-		
-		<% else %>
-		<li><button id="login-btn">log in</button></li>
-		<li><button id="sign-up-btn">sign up</button></li>
-		
-
-		<% end %>
+			<li><button><%= link_to "add recipe", new_recipe_path %></button></li>
+			<% if session[:user_id] %>
+				<li><button><%= link_to "recipes", recipes_path %></button></li>
+				<li><button><%= link_to "groups", groups_path %></button></li>
+				<li><button id="user-btn">me</button></li>
+				<div class="user-options">
+					<li><button><%=link_to "me!", user_path(session[:user_id])%></button>
+					<li><button><%=link_to "edit", edit_user_path(session[:user_id]) %></button></li>
+					<li><button><%=link_to "log out", '/logout', method: :delete %></button></li>
+				</div>
+			<% else %>
+			<li><button id="login-btn">log in</button></li>
+			<li><button id="sign-up-btn">sign up</button></li>
+			<% end %>
 	</div>
-		</ul>
+	</ul>
 	</nav>	
 <div class="login-div">
 	<p>Please login</p>
 	<%= form_for :session, url: '/login' do |f| %>
-	<%= f.text_field :username, placeholder: "username" %><br>
-	<%= f.password_field :password, placeholder: "password" %><br>
-	<%= f.submit "login" %>
+		<%= f.text_field :username, placeholder: "username" %><br>
+		<%= f.password_field :password, placeholder: "password" %><br>
+		<%= f.submit "login" %>
 	<% end %>
 </div>
 
@@ -59,28 +51,27 @@
 	<% end %>
 </div>
 
-<div id="yield-container">
+<div class="container">
 	<%= yield %>
 </div>
-<div id="hints">
-	<p>adding the group 'public' will share a recipe with everyone</p>
-	<br>
-	<p>add or create your own group, and allow others to join by typing in their email if they are already a member</p>
-	<br>
-</div>
-<div id="about">
-	<h3>inourkitchen</h3>, or iok helps people share recipes and kitchen stories with family and friends. 
 
-</div>
-<div id="careers">
-	careers.. with iok? thats funny, but your should probably hire <h3>Anthony Ferragano</h3>
-</div>
 <footer> 
+	<div id="hints">
+		<p>adding the group 'public' will share a recipe with everyone</p>
+		<br>
+		<p>add or create your own group, and allow others to join by typing in their email if they are already a member</p>
+		<br>
+	</div>
+	<div id="about">
+		<h3>inourkitchen</h3>, or iok helps people share recipes and kitchen stories with family and friends. 
+	</div>
+	<div id="careers">
+		careers.. with iok? thats funny, but your should probably hire <h3>Anthony Ferragano</h3>
+	</div>
 	<button id="hints-btn">helpful hints</button>
 	<button id="about-btn">about</button>
 	<button id="careers-btn">careers</button>
 	<h5>by <a href="aferragano.com">AFerragano</a></h5>
 </footer>
-
 </body>
 </html>
