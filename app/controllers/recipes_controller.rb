@@ -13,10 +13,12 @@ class RecipesController < ApplicationController
 
 	def index
 		public_group = Group.find_by(name: "public")
-		@public_recipes = public_group.recipes.limit(5)
+		@public_recipes = public_group.recipes.limit(10)
 		if session[:user_id]
 			group_user = GroupUser.where(user_id: session[:user_id])
-			@recipes = [] 
+			@recipes = []
+			@search = Recipe.search(params[:q])
+			@search_recipes = @search.result
 			group_user.each do |group|
 				@recipes << Group.find_by_id(group.group_id).recipes
 			end
@@ -84,4 +86,7 @@ class RecipesController < ApplicationController
 	def set_recipe
 		@recipe = Recipe.find(params[:id])
 	end
+
+
+
 end

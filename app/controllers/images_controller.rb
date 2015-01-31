@@ -1,3 +1,4 @@
+require 'digest/sha1'
 class ImagesController < ApplicationController
 	before_filter :load_imageable, except: :destroy
 
@@ -7,12 +8,28 @@ class ImagesController < ApplicationController
 
 	def new
 		@image = @imageable.images.new
+		if unsigned_mode?
+      @unsigned = true
+      # make sure we have the appropriate preset
+      @preset_name = "sample_" + Digest::SHA1.hexdigest(Cloudinary.config.api_key + Cloudinary.config.api_secret)
+      begin
+        preset = Cloudinary::Api.upload_preset(@preset_name)
+        if !preset["settings"]["return_delete_token"]
+          Cloudinary::Api.update_upload_preset(@preset_name, :return_delete_token=>true)
+        end
+      rescue
+        # An upload preset may contain (almost) all parameters that are used in upload. The following is just for illustration purposes
+        Cloudinary::Api.create_upload_preset(:name => @preset_name, :unsigned => true, :folder => "preset_folder", :return_delete_token=>true)
+      end
+    end
+    render view_for_new
 	end
 
 	def create
 		@image = @imageable.images.create(image_params)
 		if @image.save 
 			redirect_to request.referrer, notice: "image added"
+      @upload = @image.image_url.metadata
 		else
 			render :new
 		end
@@ -24,6 +41,19 @@ class ImagesController < ApplicationController
 		redirect_to request.referrer
 	end
 
+  protected
+  
+  def direct_upload_mode?
+    params[:direct].present?
+  end
+  
+  def unsigned_mode?
+    params[:unsigned].present?
+  end
+  
+  def view_for_new
+    direct_upload_mode? ? "new_direct" : "new"
+  end
 
 	private 
 

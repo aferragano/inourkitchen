@@ -1,6 +1,14 @@
 in the index page... will have search.. and limit it by 5-10 results
 that way it will be easier to maintain and produce search results.
 
+<%= search_form_for @search do |f| %>
+	<div class="field">
+		<%=f.label :title_cont, "title contains" %>
+		<%=f.text_field :title_cont %>
+	</div>
+<div class="actions"><% f.submit "search" %></div>
+<% end %>
+
 <h3>public recipes</h3>
 <div class="index-cards">
 		<% @public_recipes.each do |r| %>
@@ -17,7 +25,7 @@ that way it will be easier to maintain and produce search results.
 <% if session[:user_id] %>
 <h3>recipes</h3>
 	<div class="index-cards">
-		<% @recipes[0].each do |r| %>
+		<% @search_recipes.each do |r| %>
 			<div class="recipe-card">
 				<%=link_to r.title, recipe_path(r)%><br>
 				<%=image_tag last_image(r.images), class: "first-recipe-image" %><br>
