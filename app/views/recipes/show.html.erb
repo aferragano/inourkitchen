@@ -38,6 +38,7 @@
 		<label>by: <%=link_to comment.user.first_name, user_path(comment.user) %>
 		<%= created_at(comment) %></label>
 			<%= image_tag last_image(comment.user.images), class: "first-user-image" %>
+
 			<% end %>
 		</div>
 	<%end%>
