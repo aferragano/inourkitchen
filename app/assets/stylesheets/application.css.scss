@@ -1,4 +1,6 @@
 @import "bourbon";
+@import "neat";
+@import "grid-settings";
 @import 'groups';
 @import 'recipes';
 @import 'new_recipe';
@@ -20,6 +22,10 @@ body, ul, h1{
 	padding:0px;
 	margin:0px;
 }
+div.container {
+	@include outer-container;
+}
+
 nav {
 	background-color:white;
 	width: 100%;
@@ -80,7 +86,7 @@ nav {
 	}
 }
 .user-options{
-	height: 20px;
+	height: auto;
 	margin:-5px;
 	input, button, li{
 		margin:5px;
@@ -88,11 +94,11 @@ nav {
 	}
 }
 footer, #hints,#about,#careers {
-	height:60px;
+	height:auto;
 	background-color:white;
 	color:#6A785F;
-	padding-top:10px;
-	padding-left:10px;
+	margin-bottom:10px;
+	padding:20px;
 	a {
 		text-decoration:none;
 		color:#6A785F;

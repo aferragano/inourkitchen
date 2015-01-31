@@ -2,7 +2,7 @@
 	background-color:white;
 	border: 1px solid #CC5522;
 	color: #CC5522;
-	width: 200px;
+	@include span-columns(5);
 	height:120px;
 	display:inline-block;
 	vertical-align:text-top;
@@ -10,7 +10,6 @@
 	margin: 5px 5px 0px 0px;
 	overflow: scroll;
 	float:left;
-
 	h6 {
 		text-align:left;
 		padding-left:2px;
@@ -20,7 +19,6 @@
 		text-align: right;
 		display:block;
 		position:relative;
-		
 		vertical-align:img-bottom;
 		bottom:-60px;
 	}

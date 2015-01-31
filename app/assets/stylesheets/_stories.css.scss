@@ -1,11 +1,10 @@
 .recipe-stories {
 	margin:5px auto 5px auto;
-	width:80%;
+	@include span-columns(5);
 	background-color:white;
 	padding:10px;
 	border-radius:10px;
 	border: 2px solid #F2BAAE;
-
 	h4 {
 		font-size:1.2em;
 		margin:3px 0px 3px 10px;
@@ -13,9 +12,6 @@
 			text-decoration:none;
 			color: #CC5522;
 		}
-	}
-	p {
-
 	}
 	h6 {
 		margin:1px;

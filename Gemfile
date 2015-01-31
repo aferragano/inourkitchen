@@ -9,6 +9,7 @@ gem "rmagick"
 gem 'carrierwave', '~> 0.10.0'
 gem 'jquery-fileupload-rails', '~> 0.4.1'
 gem 'bourbon'
+gem 'neat'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0.beta2'
 # Use postgresql as the database for Active Record
