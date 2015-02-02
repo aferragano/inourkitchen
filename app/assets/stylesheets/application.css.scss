@@ -14,20 +14,21 @@
 html {
 	font-family: 'Quicksand', sans-serif;
 	background-color:#E1F0E6;
+	@include outer-container(100%);
 }
 h, p, li, button {
 	font-family: 'Quicksand', sans-serif;
 }
 
 body {
-	 @include outer-container;
+
 }
 
 body, ul, h1{
 	padding:0px;
 	margin:0px;
 }
-div.container {
+.container {
 	@include outer-container;
 }
 
