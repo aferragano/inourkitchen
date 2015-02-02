@@ -15,12 +15,22 @@ html {
 	font-family: 'Quicksand', sans-serif;
 	background-color:#E1F0E6;
 	@include outer-container(100%);
+	.container {
+	  @include media($mobile) {
+		  @include span-columns(4);
+		}
+	}
 }
 h, p, li, button {
 	font-family: 'Quicksand', sans-serif;
 }
 
 body {
+	@include outer-container;
+
+  color:  $text; 
+  font-family: 'lato';
+  @include outer-container;
 
 }
 
@@ -28,11 +38,12 @@ body, ul, h1{
 	padding:0px;
 	margin:0px;
 }
-.container {
-	@include outer-container;
-}
+
 
 nav {
+	@include media($mobile) {
+      @include span-columns(4);
+  }
 	background-color:white;
 	width: 100%;
 	margin: 0px auto 0px auto;
@@ -129,4 +140,16 @@ footer, #hints,#about,#careers {
 	h3{
 		display:inline-block;
 	}
+}
+@media screen and (max-width: 480px) {
+  .my-class {
+    display: block;
+    float: left;
+    margin-right: 7.42297%;
+    width: 46.28851%; // 2 columns of the total 4
+  }
+
+  .my-class:last-child {
+    margin-right: 0;
+  }
 }
