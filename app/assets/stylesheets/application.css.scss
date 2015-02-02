@@ -26,10 +26,6 @@ h, p, li, button {
 }
 
 body {
-	@include outer-container;
-
-  color:  $text; 
-  font-family: 'lato';
   @include outer-container;
 
 }
