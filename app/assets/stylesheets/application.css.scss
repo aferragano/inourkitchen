@@ -1,6 +1,8 @@
 @import "grid-settings";
 @import "bourbon";
 @import "neat";
+@import "grid-settings";
+
 
 @import 'groups';
 @import 'recipes';
@@ -11,7 +13,7 @@
 @import 'stories';
 @import 'image';
 
-html {
+html,body {
 	font-family: 'Quicksand', sans-serif;
 	background-color:#E1F0E6;
 	@include outer-container(100%);
@@ -25,10 +27,6 @@ h, p, li, button {
 	font-family: 'Quicksand', sans-serif;
 }
 
-body {
-  @include outer-container;
-
-}
 
 body, ul, h1{
 	padding:0px;
@@ -142,7 +140,7 @@ footer, #hints,#about,#careers {
     display: block;
     float: left;
     margin-right: 7.42297%;
-    width: 46.28851%; // 2 columns of the total 4
+    width: 46.28851%;
   }
 
   .my-class:last-child {
