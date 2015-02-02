@@ -17,8 +17,8 @@ html {
 	@include outer-container(100%);
 	.container {
 	  @include media($mobile) {
-	  @include span-columns(4);
-	}
+		  @include span-columns(4);
+		}
 	}
 }
 h, p, li, button {
@@ -26,7 +26,11 @@ h, p, li, button {
 }
 
 body {
-@include outer-container;
+	@include outer-container;
+
+  color:  $text; 
+  font-family: 'lato';
+  @include outer-container;
 
 }
 
@@ -37,6 +41,9 @@ body, ul, h1{
 
 
 nav {
+	@include media($mobile) {
+      @include span-columns(4);
+  }
 	background-color:white;
 	width: 100%;
 	margin: 0px auto 0px auto;
