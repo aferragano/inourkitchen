@@ -26,6 +26,7 @@ end
 module Sass
   module Tree
     class ImportNode < RootNode
+    	
       def _dump(f)
         Marshal.dump([@imported_filename, children])
       end
@@ -36,6 +37,7 @@ module Sass
         node.children = children
         node
       end
+
     end
   end
 end
