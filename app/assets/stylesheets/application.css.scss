@@ -1,6 +1,7 @@
+@import "grid-settings";
 @import "bourbon";
 @import "neat";
-@import "grid-settings";
+
 @import 'groups';
 @import 'recipes';
 @import 'new_recipe';
@@ -16,6 +17,10 @@ html {
 }
 h, p, li, button {
 	font-family: 'Quicksand', sans-serif;
+}
+
+body {
+	 @include outer-container;
 }
 
 body, ul, h1{
@@ -94,6 +99,9 @@ nav {
 	}
 }
 footer, #hints,#about,#careers {
+	display:block;
+	@include span-columns(10);
+	position:bottom;
 	height:auto;
 	background-color:white;
 	color:#6A785F;

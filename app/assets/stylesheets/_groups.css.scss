@@ -1,6 +1,9 @@
 #new-group {
 	height: 100px;
-	width:300px;
+	@include span-columns(4);
+	@include media($mobile) {
+		@include span-columns(4);
+	}
 	text-align:center;
 	input {
 		border:none;

@@ -7,36 +7,38 @@ h3 {
 	font-size:1.8em;
 	display:block;
 }
-.recipe-card{
-	width:200px;
-	height:auto;
-	display:inline-block;
-	padding:10px;
-	margin-left:14px;
-	vertical-align:text-top;
-	text-align:center;
-	white-space:nowrap;
-	text-wrap: normal;
+	.recipe-card{
+		width:200px;
+		height:auto;
+		display:inline-block;
+		padding:10px;
+		margin-left:14px;
+		vertical-align:text-top;
+		text-align:center;
+		white-space:nowrap;
+		text-wrap: normal;
 
-	h6 {
-		vertical-align:bottom;
-		display:block;
-		white-space:normal;
+		h6 {
+			vertical-align:bottom;
+			display:block;
+			white-space:normal;
 
+		}
 	}
-}
-.index-cards, .tag {
-	background-color: white;
-	border: 0px solid #A0B590;
-	border-radius:5px;
-	width:90%;
-	height:300px;
-	margin:10px auto 10px auto;
-	padding: 2px 10px 2px 10px;
-	vertical-align:text-top;
-	white-space:nowrap;
-	overflow-x: scroll;
-  overflow-y: hidden;
+	.index-cards, .tag {
+		background-color: white;
+		border: 0px solid #A0B590;
+		border-radius:5px;
+		width:90%;
+		height:300px;
+		margin:10px auto 10px auto;
+		padding: 2px 10px 2px 10px;
+		vertical-align:text-top;
+		white-space:nowrap;
+		overflow-x: scroll;
+	  overflow-y: hidden;
+
+
 	li, a,a:visited{
 		list-style:none;
 		text-decoration:none;
@@ -67,7 +69,6 @@ h3 {
 			margin: 15px 0px 18px 0px;
 			border-radius:15px;
 			padding-bottom:26px;
-			@include span-columns(10);
 		#title{
 			background-color:#CC5522;
 			color:white;
@@ -108,7 +109,9 @@ h3 {
 			color: #CC5522;
 			background-color:white;
 			border-radius:5px;
+
 			margin: 3px 10px 15px 0px;
+
 			a {
 				color:  #CC5522;
 				text-decoration:none;
@@ -122,30 +125,32 @@ h3 {
 				padding: 4px;
 				display: inline-block;
 				overflow: scroll;
+				
 				}
 		.recipe-element {
 			float:left;
-			@include span-columns(3);
+			width:23%;
 			border: 1px solid #CC5522;
 			border-radius:5px;
 			margin:4px;
 			margin-bottom:20px;
-			h5{
-				background-color:#CC5522;
-				width:100%;
-				margin:0px;
-				margin-top:0px;
-				padding:5px 0px 5px 0px;
-				color:white;
-				text-align:center;
-				border-radius:2px;
+
+		h5{
+			background-color:#CC5522;
+			width:100%;
+			margin:0px;
+			margin-top:0px;
+			padding:5px 0px 5px 0px;
+			color:white;
+			text-align:center;
+			border-radius:2px;
 			}
 		}
 		#ingredients{
 			float:left;
 		}
 		#directions{
-			@include span-columns(6);
+			width:69%;
 			float:right;
 			position:relative;
 			h5 {
@@ -156,9 +161,10 @@ h3 {
 			}
 		}
 	}
+
 	.recipe-tags, .recipe-groups {
 		color: #CC5522;
-		@include span-columns(4);
+		width:23%;
 		bottom:-10px;
 		h5,ul{
 			display:block;
@@ -171,7 +177,7 @@ h3 {
 			border-radius:5px;
 		}
 		li:hover {
-			opacity:.5;
+		opacity:.5;
 		}
 		h6, h5 {
 			margin:2px;
@@ -186,7 +192,7 @@ h3 {
 		input, button{
 			float:left;
 			height:20px;
-			@include span-columns(5);
+			width:100%;
 			background-color:white;
 			border: 1px solid #A0B590;
 			color: #A0B590;
@@ -197,6 +203,7 @@ h3 {
 		}
 		input {
 			display:block;
+
 		}
 	}
 }
