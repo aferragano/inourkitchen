@@ -135,15 +135,3 @@ footer, #hints,#about,#careers {
 		display:inline-block;
 	}
 }
-@media screen and (max-width: 480px) {
-  .my-class {
-    display: block;
-    float: left;
-    margin-right: 7.42297%;
-    width: 46.28851%;
-  }
-
-  .my-class:last-child {
-    margin-right: 0;
-  }
-}

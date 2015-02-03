@@ -1,0 +1,827 @@
+/* line 4, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 9, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_groups.css.scss */
+#new-group {
+  height: 100px;
+  float: left;
+  display: block;
+  margin-right: 3.7037%;
+  width: 37.77778%;
+  text-align: center;
+}
+/* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+#new-group:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 480px) {
+  /* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_groups.css.scss */
+  #new-group {
+    float: left;
+    display: block;
+    margin-right: 9.80392%;
+    width: 100%;
+  }
+  /* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+  #new-group:last-child {
+    margin-right: 0;
+  }
+}
+/* line 8, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_groups.css.scss */
+#new-group input {
+  border: none;
+  background-color: white;
+  border: 1px solid #A0B590;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px;
+  margin: 2px;
+}
+
+/* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+h3 {
+  margin: 20px auto 10px auto;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0px;
+  color: #CC5522;
+  font-size: 1.8em;
+  display: block;
+}
+
+/* line 10, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+.recipe-card {
+  width: 200px;
+  height: auto;
+  display: inline-block;
+  padding: 10px;
+  margin-left: 14px;
+  vertical-align: text-top;
+  text-align: center;
+  white-space: nowrap;
+  text-wrap: normal;
+}
+/* line 21, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+.recipe-card h6 {
+  vertical-align: bottom;
+  display: block;
+  white-space: normal;
+}
+
+/* line 28, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+.index-cards, .tag {
+  background-color: white;
+  border: 0px solid #A0B590;
+  border-radius: 5px;
+  width: 90%;
+  height: 300px;
+  margin: 10px auto 10px auto;
+  padding: 2px 10px 2px 10px;
+  vertical-align: text-top;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+/* line 42, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+.index-cards li, .index-cards a, .index-cards a:visited, .tag li, .tag a, .tag a:visited {
+  list-style: none;
+  text-decoration: none;
+  color: #A0B590;
+  padding: 0px 0px 0px 0px;
+  width: 280px;
+  display: inline;
+}
+/* line 50, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+.index-cards h3, .tag h3 {
+  margin: 0px 0px 18px 0px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0px;
+  background-color: #CC5522;
+  color: white;
+  width: 100%;
+}
+
+/* line 61, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 65, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe {
+  width: 90%;
+  background-color: white;
+  border: 0px solid #CC5522;
+  margin: 15px 0px 18px 0px;
+  border-radius: 15px;
+  padding-bottom: 26px;
+}
+/* line 72, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe #title {
+  background-color: #CC5522;
+  color: white;
+  margin: 0px 0px 0px 0px;
+  padding: 5px 1px 1px 5px;
+  border-radius: 15px 15px 2px 2px;
+}
+/* line 78, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe #title h5 {
+  padding: 0px 0px 15px 5px;
+  margin-bottom: 15px;
+  background-color: #CC5522;
+}
+/* line 83, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe #title button {
+  padding: 10px;
+  margin-top: -15px;
+}
+/* line 88, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe #summary {
+  margin-top: 0px;
+  padding: 12px;
+  text-align: center;
+}
+/* line 93, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe h4 {
+  border: 1px solid #CC5522;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px 5px 0px 5px;
+  margin: -25px 0px 0px 0px;
+  font-size: .9em;
+}
+/* line 101, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe h5, #recipe-container .display-recipe p {
+  display: inline-block;
+  margin: auto;
+  padding: 5px;
+}
+/* line 106, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe button {
+  float: right;
+  border: 1px solid #CC5522;
+  color: #CC5522;
+  background-color: white;
+  border-radius: 5px;
+  margin: 3px 10px 15px 0px;
+}
+/* line 115, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe button a {
+  color: #CC5522;
+  text-decoration: none;
+}
+/* line 120, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe .recipe-image {
+  margin: 20px auto 5px auto;
+  height: 180px;
+  text-align: center;
+  border-radius: 15px;
+  padding: 4px;
+  display: inline-block;
+  overflow: scroll;
+}
+/* line 130, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe .recipe-element {
+  float: left;
+  width: 23%;
+  border: 1px solid #CC5522;
+  border-radius: 5px;
+  margin: 4px;
+  margin-bottom: 20px;
+}
+/* line 138, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe .recipe-element h5 {
+  background-color: #CC5522;
+  width: 100%;
+  margin: 0px;
+  margin-top: 0px;
+  padding: 5px 0px 5px 0px;
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+}
+/* line 149, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe #ingredients {
+  float: left;
+}
+/* line 152, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe #directions {
+  width: 69%;
+  float: right;
+  position: relative;
+}
+/* line 156, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .display-recipe #directions h5 {
+  width: 100%;
+  margin: 0px;
+  padding: 5px 0px 5px 0px;
+  border-radius: 2px;
+}
+/* line 165, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .recipe-tags, #recipe-container .recipe-groups {
+  color: #CC5522;
+  width: 23%;
+  bottom: -10px;
+}
+/* line 169, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .recipe-tags h5, #recipe-container .recipe-tags ul, #recipe-container .recipe-groups h5, #recipe-container .recipe-groups ul {
+  display: block;
+}
+/* line 172, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .recipe-tags li, #recipe-container .recipe-groups li {
+  margin: 2px;
+  list-style: none;
+  display: inline-block;
+  background-color: #A0B590;
+  border-radius: 5px;
+}
+/* line 179, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .recipe-tags li:hover, #recipe-container .recipe-groups li:hover {
+  opacity: .5;
+}
+/* line 182, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .recipe-tags h6, #recipe-container .recipe-tags h5, #recipe-container .recipe-groups h6, #recipe-container .recipe-groups h5 {
+  margin: 2px;
+  padding: 5px;
+  text-align: top;
+}
+/* line 187, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .recipe-tags a, #recipe-container .recipe-groups a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+}
+/* line 192, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .recipe-tags input, #recipe-container .recipe-tags button, #recipe-container .recipe-groups input, #recipe-container .recipe-groups button {
+  float: left;
+  height: 20px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #A0B590;
+  color: #A0B590;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  margin: 2px;
+}
+/* line 204, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+#recipe-container .recipe-tags input, #recipe-container .recipe-groups input {
+  display: block;
+}
+
+/* line 210, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+.thumb-img {
+  width: 50px;
+}
+
+/* line 213, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+.first-recipe-image {
+  width: 150px;
+  border-radius: 30px;
+  float: center;
+  margin: 3px;
+}
+
+/* line 219, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_recipes.css.scss */
+.add-image {
+  margin: 5px;
+  position: relative;
+  color: #CC5522;
+  height: 20px;
+}
+
+/* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_new_recipe.css.scss */
+#new-recipe, #recipe-edit {
+  background-color: white;
+  border: 0px solid #A61900;
+  border-radius: 5px;
+  float: left;
+  display: block;
+  margin-right: 3.7037%;
+  width: 79.25926%;
+  margin: 10px auto 10px auto;
+  padding: 10px 10px 35px 10px;
+}
+/* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+#new-recipe:last-child, #recipe-edit:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 480px) {
+  /* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_new_recipe.css.scss */
+  #new-recipe, #recipe-edit {
+    float: left;
+    display: block;
+    margin-right: 9.80392%;
+    width: 100%;
+  }
+  /* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+  #new-recipe:last-child, #recipe-edit:last-child {
+    margin-right: 0;
+  }
+}
+/* line 16, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_new_recipe.css.scss */
+#new-recipe input, #recipe-edit input {
+  font-size: 1.3em;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #A61900;
+  border-radius: 5px;
+  background-color: white;
+  color: #A61900;
+  padding: 10px;
+}
+/* line 26, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_new_recipe.css.scss */
+#new-recipe textarea, #recipe-edit textarea {
+  font-size: 1em;
+  width: 80%;
+  heigth: 50px;
+  border: 1px solid #A61900;
+  border-radius: 5px;
+  padding: 10px;
+}
+/* line 34, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_new_recipe.css.scss */
+#new-recipe .recipe-ingredients, #recipe-edit .recipe-ingredients {
+  width: 30%;
+  height: 80px;
+}
+/* line 38, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_new_recipe.css.scss */
+#new-recipe .recipe-directions, #recipe-edit .recipe-directions {
+  height: 300px;
+  width: 95%;
+}
+/* line 42, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_new_recipe.css.scss */
+#new-recipe .recipe-save-btn, #recipe-edit .recipe-save-btn {
+  margin-top: 5px;
+  display: block;
+  float: right;
+}
+/* line 47, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_new_recipe.css.scss */
+#new-recipe .recipe-save-btn, #recipe-edit .recipe-save-btn {
+  font-size: 1em;
+  padding: 2px;
+}
+
+/* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+.user-image {
+  height: auto;
+  width: 100px;
+  border-radius: 25px;
+  margin: 2px;
+  float: right;
+}
+
+/* line 8, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+.user {
+  width: 50%;
+  margin: 20px auto 20px auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #CC5522;
+  border-radius: 15px;
+  padding: 20px;
+  display: block;
+}
+/* line 19, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+.user h2, .user h4 {
+  padding: 2px;
+  margin: 3px;
+}
+/* line 24, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+.user h6 {
+  padding: 6px;
+  margin: 1px;
+}
+/* line 28, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+.user a, .user button {
+  position: inline-block;
+  float: right;
+  background-color: #CC5522;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* line 38, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+#user-groups, #user-recipes {
+  width: 240px;
+  display: inline-block;
+  vertical-align: text-top;
+}
+/* line 43, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+#user-groups h3, #user-recipes h3 {
+  text-align: left;
+  margin: 0px auto 0px auto;
+  padding: 8px;
+}
+/* line 48, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+#user-groups h4, #user-groups a, #user-recipes h4, #user-recipes a {
+  width: 100%;
+  display: inline-block;
+  padding: 8px;
+  text-decoration: none;
+}
+
+/* line 55, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+.first-user-image {
+  width: 60px;
+  float: center;
+  margin-right: 2px;
+  bottom: -5px;
+  margin-bottom: 0px;
+  border-radius: 60px;
+}
+
+/* line 63, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+#add-member {
+  text-align: center;
+  margin: 1px;
+}
+
+/* line 67, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+.group-user-card {
+  width: 70%;
+  margin: 20px auto 40px auto;
+  text-align: center;
+}
+/* line 71, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_user.css.scss */
+.group-user-card input {
+  padding: 14px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+  background-color: white;
+  color: #6A785F;
+  vertical-align: text-center;
+}
+
+/* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_tag.css.scss */
+#tag-name {
+  text-wrap: normal;
+  white-space: normal;
+  padding: 8px;
+  width: 38%;
+  float: center;
+  display: inline-block;
+  margin: 10px 4% 10px 4%;
+}
+/* line 10, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_tag.css.scss */
+#tag-name h5 {
+  padding: 3px;
+  margin: 10px;
+  border: 1px solid #A61900;
+  display: inline;
+  width: auto;
+  border-radius: 5px;
+  line-height: 250%;
+}
+
+/* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_comment.css.scss */
+.comment {
+  background-color: white;
+  border: 1px solid #CC5522;
+  color: #CC5522;
+  float: left;
+  display: block;
+  margin-right: 3.7037%;
+  width: 48.14815%;
+  height: 120px;
+  display: inline-block;
+  vertical-align: text-top;
+  border-radius: 5px;
+  margin: 5px 5px 0px 0px;
+  overflow: scroll;
+  float: left;
+}
+/* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+.comment:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 480px) {
+  /* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_comment.css.scss */
+  .comment {
+    float: left;
+    display: block;
+    margin-right: 9.80392%;
+    width: 100%;
+  }
+  /* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+  .comment:last-child {
+    margin-right: 0;
+  }
+}
+/* line 16, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_comment.css.scss */
+.comment h6 {
+  text-align: left;
+  padding-left: 2px;
+  margin: 0px;
+}
+/* line 21, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_comment.css.scss */
+.comment label {
+  text-align: right;
+  display: block;
+  position: relative;
+  vertical-align: img-bottom;
+  bottom: -60px;
+}
+/* line 28, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_comment.css.scss */
+.comment textarea {
+  width: 80%;
+  display: block;
+  margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  float: center;
+}
+/* line 36, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_comment.css.scss */
+.comment input {
+  float: right;
+  background-color: white;
+  color: #CC5522;
+  border-radius: 5px;
+  border: none;
+  margin: 0px 0px 0px 0px;
+}
+/* line 44, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_comment.css.scss */
+.comment a, .comment a:visited {
+  color: #CC5522;
+  text-decoration: none;
+}
+
+/* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_stories.css.scss */
+.recipe-stories {
+  margin: 5px auto 5px auto;
+  float: left;
+  display: block;
+  margin-right: 3.7037%;
+  width: 48.14815%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #F2BAAE;
+}
+/* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+.recipe-stories:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 480px) {
+  /* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_stories.css.scss */
+  .recipe-stories {
+    float: left;
+    display: block;
+    margin-right: 9.80392%;
+    width: 100%;
+  }
+  /* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+  .recipe-stories:last-child {
+    margin-right: 0;
+  }
+}
+/* line 12, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_stories.css.scss */
+.recipe-stories h4 {
+  font-size: 1.2em;
+  margin: 3px 0px 3px 10px;
+}
+/* line 15, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_stories.css.scss */
+.recipe-stories h4 a {
+  text-decoration: none;
+  color: #CC5522;
+}
+/* line 20, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_stories.css.scss */
+.recipe-stories h6 {
+  margin: 1px;
+  padding: 1px;
+  position: relative;
+  right: -10px;
+}
+/* line 26, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_stories.css.scss */
+.recipe-stories input {
+  font-size: 1em;
+}
+/* line 29, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_stories.css.scss */
+.recipe-stories textarea {
+  width: 60%;
+  height: 100px;
+}
+
+/* line 1, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_image.css.scss */
+.logo {
+  height: 70px;
+  display: inline-block;
+  margin-top: -20px;
+}
+
+/* line 7, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_image.css.scss */
+.img-delete-btn, .tag-delete-btn {
+  text-decoration: none;
+  color: #A0B590;
+  border: 1px solid #A0B590;
+  border-radius: 6px;
+  padding: 0px 3px 3px 3px;
+  vertical-align: bottom;
+}
+
+/* line 16, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_image.css.scss */
+.img-delete-btn:hover, .tag-delete-btn:hover {
+  color: #CC5522;
+  background-color: #CC5522;
+}
+
+/* line 20, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_image.css.scss */
+.tag-delete-btn {
+  text-decoration: none;
+  color: white;
+  background-color: #A0B590;
+  border: 1px solid #A0B590;
+  border-radius: 6px;
+  padding: 0px 3px 3px 3px;
+  vertical-align: bottom;
+}
+
+/* line 29, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/_image.css.scss */
+.tag-delete-btn:hover {
+  color: #A0B590;
+  background-color: #CC5522;
+}
+
+/* line 16, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+html, body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #E1F0E6;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 9, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/bourbon-4.1.1/app/assets/stylesheets/addons/_clearfix.scss */
+html::after, body::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+@media screen and (max-width: 480px) {
+  /* line 20, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+  html .container, body .container {
+    float: left;
+    display: block;
+    margin-right: 9.80392%;
+    width: 100%;
+  }
+  /* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+  html .container:last-child, body .container:last-child {
+    margin-right: 0;
+  }
+}
+
+/* line 26, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+h, p, li, button {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* line 31, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+body, ul, h1 {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 37, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+nav {
+  background-color: white;
+  width: 100%;
+  margin: 0px auto 0px auto;
+  border-top: none;
+}
+@media screen and (max-width: 480px) {
+  /* line 37, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+  nav {
+    float: left;
+    display: block;
+    margin-right: 9.80392%;
+    width: 100%;
+  }
+  /* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+  nav:last-child {
+    margin-right: 0;
+  }
+}
+/* line 47, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+nav a, nav li {
+  font-size: 1em;
+  text-decoration: none;
+  color: #CC5522;
+  list-style: none;
+  display: inline-block;
+}
+/* line 54, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+nav li {
+  margin: 0px 10px 0px 10px;
+}
+/* line 60, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+nav button {
+  font-size: .8em;
+  color: #CC5522;
+  background-color: white;
+  border-radius: 5px;
+  border: 0px solid #CC5522;
+  float: right;
+  margin-top: 50px;
+}
+
+/* line 70, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+.options {
+  float: right;
+  padding-right: 2px;
+}
+
+/* line 75, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+.login-div, .sign-up-div, .user-options {
+  display: block;
+  width: 30%;
+  font-size: .8em;
+  color: #CC5522;
+  background-color: white;
+  border-radius: 5px;
+  border: 0px solid #CC5522;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+}
+/* line 90, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+.login-div input, .sign-up-div input, .user-options input {
+  margin: 5px;
+  border: none;
+  border: 1px solid #CC5522;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* line 99, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+.user-options {
+  height: auto;
+  margin: -5px;
+}
+/* line 102, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+.user-options input, .user-options button, .user-options li {
+  margin: 5px;
+  padding: 0px;
+}
+
+/* line 107, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+footer, #hints, #about, #careers {
+  display: block;
+  float: left;
+  display: block;
+  margin-right: 3.7037%;
+  width: 100%;
+  position: bottom;
+  height: auto;
+  background-color: white;
+  color: #6A785F;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+/* line 87, /Users/anthonyferragano/.rvm/gems/ruby-2.1.2/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+footer:last-child, #hints:last-child, #about:last-child, #careers:last-child {
+  margin-right: 0;
+}
+/* line 116, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+footer a, #hints a, #about a, #careers a {
+  text-decoration: none;
+  color: #6A785F;
+}
+/* line 120, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+footer h5, #hints h5, #about h5, #careers h5 {
+  display: inline-block;
+  float: right;
+  padding-right: 17px;
+}
+/* line 125, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+footer button, #hints button, #about button, #careers button {
+  color: #6A785F;
+}
+/* line 128, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+footer p, #hints p, #about p, #careers p {
+  text-align: center;
+}
+
+/* line 132, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+#hints, #about, #careers {
+  height: auto;
+}
+/* line 134, /Users/anthonyferragano/Desktop/inourkitchen/app/assets/stylesheets/application.css.scss */
+#hints h3, #about h3, #careers h3 {
+  display: inline-block;
+}
