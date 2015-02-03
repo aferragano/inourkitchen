@@ -13,3 +13,4 @@
 /log/*.log
 /tmp
 /config/cloudinary.yml
+/config/secrets.yml
