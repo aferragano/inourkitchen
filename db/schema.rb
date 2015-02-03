@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20141124170006) do
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
-    t.string   "content"
+    t.string   "content",          null: false
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20141124170006) do
   end
 
   create_table "groups", force: true do |t|
-    t.string   "name"
+    t.string   "name",        null: false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 20141124170006) do
 
   create_table "recipe_stories", force: true do |t|
     t.integer  "user_id"
-    t.integer  "recipe_id"
-    t.integer  "story_id"
+    t.integer  "recipe_id",  null: false
+    t.integer  "story_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -71,20 +71,20 @@ ActiveRecord::Schema.define(version: 20141124170006) do
   end
 
   create_table "recipes", force: true do |t|
-    t.string   "title"
-    t.string   "summary"
-    t.string   "serve_size"
-    t.string   "time"
-    t.string   "ingredients"
-    t.text     "directions"
+    t.string   "title",       null: false
+    t.string   "summary",     null: false
+    t.string   "serve_size",  null: false
+    t.string   "time",        null: false
+    t.string   "ingredients", null: false
+    t.text     "directions",  null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "stories", force: true do |t|
-    t.string   "title"
-    t.text     "content"
+    t.string   "title",      null: false
+    t.text     "content",    null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -97,11 +97,11 @@ ActiveRecord::Schema.define(version: 20141124170006) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "username"
+    t.string   "email",           null: false
+    t.string   "username",        null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "password_digest"
+    t.string   "password_digest", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
