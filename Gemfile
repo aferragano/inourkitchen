@@ -1,18 +1,20 @@
 source 'https://rubygems.org'
+
+gem 'rails_12factor', group: :production
 gem 'cloudinary'
 gem 'aws-sdk-v1'
-gem 'aws-sdk', '2.0.6.pre'
-gem 'rails_12factor', group: :production
+gem 'aws-sdk'
 gem 'ransack'
 gem 'draper'
 gem "rmagick"
-gem 'carrierwave', '~> 0.10.0'
-gem 'jquery-fileupload-rails', '~> 0.4.1'
+gem 'carrierwave'
+gem 'jquery-fileupload-rails'
 gem 'bourbon'
 gem 'neat'
 gem 'sass'
 gem 'sprockets'
 gem 'sprockets-rails'
+gem 'arel', '6.0.0.beta2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0.beta2'
 # Use postgresql as the database for Active Record
@@ -29,7 +31,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jQuery as the JavaScript library
 gem 'jquery-rails', '~> 4.0.0.beta2'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-# gem 'turbolinks'
+gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
