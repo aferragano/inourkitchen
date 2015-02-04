@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@recipes =@user.recipes
+		@recipes = @user.recipes
 		@groups = @user.groups
 		@user_image = @user.images
 	end

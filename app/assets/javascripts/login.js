@@ -1,7 +1,7 @@
 $(document).ready(function() { 
 	function hideShow(buttonID, showItem){
 		$(showItem).hide();
-		$(buttonID).on('click', function(){
+		$(buttonID).on('hover', function(){
 			$(showItem).slideToggle("slow", function(){
 
 			});
