@@ -13,5 +13,5 @@ $(document).ready(function() {
 	hideShow($('#hints-btn'),$('#hints'));
 	hideShow($('#about-btn'),$('#about'));
 	hideShow($('#careers-btn'),$('#careers'));
-
+ 
 });

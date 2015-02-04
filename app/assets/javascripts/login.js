@@ -1,7 +1,7 @@
 $(document).ready(function() { 
 	function hideShow(buttonID, showItem){
 		$(showItem).hide();
-		$(buttonID).on('hover', function(){
+		$(buttonID).on('click', function(){
 			$(showItem).slideToggle("slow", function(){
 
 			});
@@ -11,5 +11,5 @@ $(document).ready(function() {
 	hideShow($('#sign-up-btn'),$('.sign-up-div'));
 	hideShow($('#user-btn'),$('.user-options'));
 
-
+ 
 });
