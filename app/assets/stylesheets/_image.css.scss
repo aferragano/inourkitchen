@@ -1,7 +1,14 @@
 .logo {
 	height:70px;
 	display:inline-block;
-	margin-top:-20px;
+	margin-top:-10px;
+}
+.first-user-image {
+	width:60px;
+	margin:5px;
+	margin-bottom:0px;
+	border-radius:60px;
+	display:inline-block;
 }
 
 .img-delete-btn, .tag-delete-btn {
@@ -11,7 +18,7 @@
 	border-radius: 6px;
 	padding: 0px 3px 3px 3px;
 	vertical-align:bottom;
-
+ 
 }	
 .img-delete-btn:hover, .tag-delete-btn:hover{
 		color:#CC5522;

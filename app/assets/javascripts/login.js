@@ -11,5 +11,5 @@ $(document).ready(function() {
 	hideShow($('#sign-up-btn'),$('.sign-up-div'));
 	hideShow($('#user-btn'),$('.user-options'));
 
-
+ 
 });

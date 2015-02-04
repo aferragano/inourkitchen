@@ -16,14 +16,15 @@
 	h6 {
 		text-align:left;
 		padding-left:2px;
-		margin:0px;
+		margin:10px;
+		vertical-align:top;
+		display:inline-block;
 	}
 	label {
 		text-align: right;
 		display:block;
 		position:relative;
-		vertical-align:img-bottom;
-		bottom:-60px;
+		vertical-align:bottom;
 	}
 	textarea {
 		width:80%;
