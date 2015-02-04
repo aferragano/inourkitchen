@@ -1,14 +1,12 @@
+
 <div id="recipe-edit">
 <%= form_for @recipe do |f| %>
-<%= f.text_field :title, placeholder: "Recipe Name", class: "recipe-title" %><br>
-<%= f.text_area :summary, placeholder: "please provide a brief summary of this recipe" %><br>
-<%= f.text_field :serve_size, placeholder:"serves how many" %><br>
-<%= f.text_field :time, placeholder:"time to make in minutes" %><br>
-<%= f.text_area :ingredients, placeholder:"list all ingredients", class: "recipe-ingredients" %><br>
-<%= f.text_area :directions, placeholder:"please provide step-by-step instructions", class: "recipe-directions" %><br>
-
-
-
-<br><%=f.submit"save recipe", class: "recipe-save-btn" %>
-<%end%>
+	<%= f.text_field :title, placeholder: "Recipe Name", class: "recipe-title" %><br>
+	<%= f.text_area :summary, placeholder: "please provide a brief summary of this recipe" %><br>
+	<%= f.text_field :serve_size, placeholder:"serves how many" %><br>
+	<%= f.text_field :time, placeholder:"time to make in minutes" %><br>
+	<%= f.text_area :ingredients, placeholder:"list all ingredients", class: "recipe-ingredients" %><br>
+	<%= f.text_area :directions, placeholder:"please provide step-by-step instructions", class: "recipe-directions" %><br>
+	<br><%=f.submit"save recipe", class: "recipe-save-btn" %>
+	<%end%>
 </div>
