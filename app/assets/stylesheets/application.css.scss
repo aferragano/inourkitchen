@@ -107,7 +107,6 @@ nav {
 footer, #hints,#about,#careers {
 	display:block;
 	@include span-columns(10);
-	position:bottom;
 	height:auto;
 	background-color:white;
 	color:#6A785F;
