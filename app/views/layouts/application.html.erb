@@ -13,7 +13,8 @@
 
 	<nav>
 		<ul>
-		<li><img src="../iok_logo.png" alt="iok logo" class="logo"><br><%= link_to "in our kitchen", root_path %></li>
+		<li><img src="/iok_logo.png" alt="iok logo" class="logo">
+			<br><%= link_to "in our kitchen", root_path %></li>
 		<div class="options">
 			<li><button><%= link_to "add recipe", new_recipe_path %></button></li>
 			<% if session[:user_id] %>
