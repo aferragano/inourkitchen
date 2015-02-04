@@ -10,26 +10,19 @@
 	<h4><%= @user.email%></h4>
 	<button><%= link_to "edit", edit_user_path(@user) %></button>
 </div><br>
-
-<div class="user" id="user-recipes" >
-	<h3>recipes</h3>
-<hr>
-<% @recipes.each do |recipe| %>
-
-	 <h4><%=link_to recipe.title, recipe_path(recipe) %></h4>
-	 <%  recipe.images.each do |img| %>
-	 <%=image_tag img.image_url.url, class: "first-recipe-image"%>
-	 <% end %>
-	
-<% end %>
+<div class="index-cards" id="user-recipes">
+<h3>recipes</h3>
+		<% @recipes.each do |r| %>
+			<div class="recipe-card">
+				<h4><%= link_to r.title, recipe_path(r)%></h4>
+				<%= image_tag last_image(r.images), class: "first-recipe-image" %>
+			</div>
+		<% end %>
 </div>
 
-<div class="user" id="user-groups">
+<div class="index-cards" id="user-groups">
 	<h3>groups</h3>
-<hr>
-<% @groups.each do |group| %>
-
-	 <h4><%=link_to group.name, group_path(group) %></h4>
-
-<% end %>
-	</div>
+	<% @groups.each do |group| %>
+		 <h4><%=link_to group.name, group_path(group) %></h4>
+	<% end %>
+</div>
